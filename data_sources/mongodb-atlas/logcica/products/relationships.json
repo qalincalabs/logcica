@@ -1,0 +1,14 @@
+{
+    "categories": {
+        "ref": "#/relationship/mongodb-atlas/logcica/productCategories",
+        "source_key": "categories",
+        "foreign_key": "_id",
+        "is_list": true
+    },
+    "group": {
+        "ref": "#/relationship/mongodb-atlas/logcica/productGroups",
+        "source_key": "group",
+        "foreign_key": "_id",
+        "is_list": false
+    }
+}

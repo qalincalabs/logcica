@@ -1,0 +1,14 @@
+{
+    "enterprise": {
+        "ref": "#/relationship/mongodb-atlas/logcica/enterprises",
+        "source_key": "enterprise",
+        "foreign_key": "_id",
+        "is_list": false
+    },
+    "items": {
+        "ref": "#/relationship/mongodb-atlas/logcica/catalogItems",
+        "source_key": "items",
+        "foreign_key": "_id",
+        "is_list": true
+    }
+}

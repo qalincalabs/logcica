@@ -1,0 +1,14 @@
+{
+    "children": {
+        "ref": "#/relationship/mongodb-atlas/logcica/productCategories",
+        "source_key": "children",
+        "foreign_key": "_id",
+        "is_list": true
+    },
+    "classification": {
+        "ref": "#/relationship/mongodb-atlas/logcica/productClassifications",
+        "source_key": "classification",
+        "foreign_key": "_id",
+        "is_list": false
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "enterprise": {
+        "ref": "#/relationship/mongodb-atlas/logcica/enterprises",
+        "source_key": "enterprise",
+        "foreign_key": "_id",
+        "is_list": false
+    }
+}

@@ -1,0 +1,92 @@
+{
+    "properties": {
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "categories": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        },
+        "group": {
+            "bsonType": "objectId"
+        },
+        "gtin": {
+            "bsonType": "string"
+        },
+        "measurements": {
+            "bsonType": "object",
+            "properties": {
+                "depth": {
+                    "bsonType": "object",
+                    "properties": {
+                        "unit": {
+                            "bsonType": "object",
+                            "properties": {
+                                "code": {
+                                    "bsonType": "string"
+                                }
+                            }
+                        },
+                        "value": {
+                            "bsonType": "int"
+                        }
+                    }
+                },
+                "grossWeight": {
+                    "bsonType": "object",
+                    "properties": {
+                        "unit": {
+                            "bsonType": "object",
+                            "properties": {
+                                "code": {
+                                    "bsonType": "string"
+                                }
+                            }
+                        },
+                        "value": {
+                            "bsonType": "int"
+                        }
+                    }
+                },
+                "height": {
+                    "bsonType": "object",
+                    "properties": {
+                        "unit": {
+                            "bsonType": "object",
+                            "properties": {
+                                "code": {
+                                    "bsonType": "string"
+                                }
+                            }
+                        },
+                        "value": {
+                            "bsonType": "int"
+                        }
+                    }
+                },
+                "width": {
+                    "bsonType": "object",
+                    "properties": {
+                        "unit": {
+                            "bsonType": "object",
+                            "properties": {
+                                "code": {
+                                    "bsonType": "string"
+                                }
+                            }
+                        },
+                        "value": {
+                            "bsonType": "int"
+                        }
+                    }
+                }
+            }
+        },
+        "name": {
+            "bsonType": "string"
+        }
+    },
+    "title": "product"
+}

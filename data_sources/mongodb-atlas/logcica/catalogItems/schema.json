@@ -1,0 +1,45 @@
+{
+    "properties": {
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "categories": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        },
+        "ids": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "string"
+            }
+        },
+        "name": {
+            "bsonType": "string"
+        },
+        "product": {
+            "bsonType": "objectId"
+        },
+        "sku": {
+            "bsonType": "string"
+        },
+        "weight": {
+            "bsonType": "object",
+            "properties": {
+                "unit": {
+                    "bsonType": "object",
+                    "properties": {
+                        "code": {
+                            "bsonType": "string"
+                        }
+                    }
+                },
+                "value": {
+                    "bsonType": "double"
+                }
+            }
+        }
+    },
+    "title": "catalogItem"
+}

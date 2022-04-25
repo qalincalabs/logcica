@@ -1,0 +1,17 @@
+{
+    "properties": {
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "enterprise": {
+            "bsonType": "objectId"
+        },
+        "marketplace": {
+            "bsonType": "objectId"
+        },
+        "person": {
+            "bsonType": "objectId"
+        }
+    },
+    "title": "workspace"
+}

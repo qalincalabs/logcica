@@ -1,0 +1,14 @@
+{
+    "lines.[].product": {
+        "ref": "#/relationship/mongodb-atlas/logcica/products",
+        "source_key": "lines.[].product",
+        "foreign_key": "_id",
+        "is_list": false
+    },
+    "shippingAddress.place": {
+        "ref": "#/relationship/mongodb-atlas/logcica/places",
+        "source_key": "shippingAddress.place",
+        "foreign_key": "_id",
+        "is_list": false
+    }
+}

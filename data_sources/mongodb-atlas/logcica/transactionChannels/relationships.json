@@ -1,0 +1,8 @@
+{
+    "internalTarget.workspace": {
+        "ref": "#/relationship/mongodb-atlas/logcica/workspaces",
+        "source_key": "internalTarget.workspace",
+        "foreign_key": "_id",
+        "is_list": false
+    }
+}

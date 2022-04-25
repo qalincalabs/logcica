@@ -1,0 +1,65 @@
+{
+    "properties": {
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "direction": {
+            "bsonType": "string"
+        },
+        "externalTarget": {
+            "bsonType": "object",
+            "properties": {
+                "enterprise": {
+                    "bsonType": "object",
+                    "properties": {
+                        "id": {
+                            "bsonType": "string"
+                        }
+                    }
+                },
+                "marketplace": {
+                    "bsonType": "object",
+                    "properties": {
+                        "key": {
+                            "bsonType": "string"
+                        }
+                    }
+                },
+                "platform": {
+                    "bsonType": "object",
+                    "properties": {
+                        "key": {
+                            "bsonType": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "filter": {
+            "bsonType": "object",
+            "properties": {
+                "isOrdered": {
+                    "bsonType": "bool"
+                },
+                "status": {
+                    "bsonType": "string"
+                }
+            }
+        },
+        "internalTarget": {
+            "bsonType": "object",
+            "properties": {
+                "workspace": {
+                    "bsonType": "objectId"
+                }
+            }
+        },
+        "resource": {
+            "bsonType": "string"
+        },
+        "role": {
+            "bsonType": "string"
+        }
+    },
+    "title": "transactionChannel"
+}

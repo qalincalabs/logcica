@@ -1,0 +1,8 @@
+{
+    "product": {
+        "ref": "#/relationship/mongodb-atlas/logcica/products",
+        "source_key": "product",
+        "foreign_key": "_id",
+        "is_list": false
+    }
+}

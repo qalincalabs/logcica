@@ -1,0 +1,66 @@
+{
+    "properties": {
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "carrier": {
+            "bsonType": "object",
+            "properties": {
+                "enterprise": {
+                    "bsonType": "objectId"
+                }
+            },
+            "title": "transactionParty"
+        },
+        "items": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "object",
+                "properties": {
+                    "product": {
+                        "bsonType": "objectId"
+                    },
+                    "quantity": {
+                        "bsonType": "object",
+                        "properties": {
+                            "unit": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "code": {
+                                        "bsonType": "string"
+                                    },
+                                    "symbol": {
+                                        "bsonType": "string"
+                                    },
+                                    "text": {
+                                        "bsonType": "string"
+                                    }
+                                }
+                            },
+                            "value": {
+                                "bsonType": "int"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "receiver": {
+            "bsonType": "object",
+            "properties": {
+                "enterprise": {
+                    "bsonType": "objectId"
+                }
+            }
+        },
+        "shipper": {
+            "bsonType": "object",
+            "properties": {
+                "enterprise": {
+                    "bsonType": "objectId"
+                }
+            }
+        }
+    },
+    "title": "shipment"
+}

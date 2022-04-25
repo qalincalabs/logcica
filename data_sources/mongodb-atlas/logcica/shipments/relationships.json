@@ -1,0 +1,26 @@
+{
+    "carrier.enterprise": {
+        "ref": "#/relationship/mongodb-atlas/logcica/enterprises",
+        "source_key": "carrier.enterprise",
+        "foreign_key": "_id",
+        "is_list": false
+    },
+    "items.[].product": {
+        "ref": "#/relationship/mongodb-atlas/logcica/products",
+        "source_key": "items.[].product",
+        "foreign_key": "_id",
+        "is_list": false
+    },
+    "receiver.enterprise": {
+        "ref": "#/relationship/mongodb-atlas/logcica/enterprises",
+        "source_key": "receiver.enterprise",
+        "foreign_key": "_id",
+        "is_list": false
+    },
+    "shipper.enterprise": {
+        "ref": "#/relationship/mongodb-atlas/logcica/enterprises",
+        "source_key": "shipper.enterprise",
+        "foreign_key": "_id",
+        "is_list": false
+    }
+}

@@ -1,0 +1,201 @@
+{
+    "properties": {
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "broker": {
+            "bsonType": "object",
+            "properties": {
+                "marketplace": {
+                    "bsonType": "objectId"
+                },
+                "name": {
+                    "bsonType": "string"
+                }
+            }
+        },
+        "buyer": {
+            "bsonType": "object",
+            "properties": {
+                "email": {
+                    "bsonType": "string"
+                },
+                "name": {
+                    "bsonType": "string"
+                },
+                "person": {
+                    "bsonType": "objectId"
+                },
+                "phone": {
+                    "bsonType": "string"
+                }
+            }
+        },
+        "confirmed": {
+            "bsonType": "bool"
+        },
+        "date": {
+            "bsonType": "date"
+        },
+        "items": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "object",
+                "properties": {
+                    "name": {
+                        "bsonType": "string"
+                    },
+                    "quantity": {
+                        "bsonType": "object",
+                        "properties": {
+                            "value": {
+                                "bsonType": "int"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "lines": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "object",
+                "properties": {
+                    "gtin": {
+                        "bsonType": "string"
+                    },
+                    "item": {
+                        "bsonType": "objectId"
+                    },
+                    "name": {
+                        "bsonType": "string"
+                    },
+                    "price": {
+                        "bsonType": "object",
+                        "properties": {
+                            "currency": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "code": {
+                                        "bsonType": "string"
+                                    },
+                                    "symbol": {
+                                        "bsonType": "string"
+                                    },
+                                    "text": {
+                                        "bsonType": "string"
+                                    }
+                                }
+                            },
+                            "value": {
+                                "bsonType": "double"
+                            }
+                        }
+                    },
+                    "product": {
+                        "bsonType": "objectId"
+                    },
+                    "quantity": {
+                        "bsonType": "object",
+                        "properties": {
+                            "unit": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "code": {
+                                        "bsonType": "string"
+                                    },
+                                    "symbol": {
+                                        "bsonType": "string"
+                                    },
+                                    "text": {
+                                        "bsonType": "string"
+                                    }
+                                }
+                            },
+                            "value": {
+                                "bsonType": "int"
+                            }
+                        }
+                    },
+                    "sku": {
+                        "bsonType": "string"
+                    }
+                }
+            }
+        },
+        "number": {
+            "bsonType": "string"
+        },
+        "seller": {
+            "bsonType": "object",
+            "properties": {
+                "enterprise": {
+                    "bsonType": "objectId"
+                },
+                "name": {
+                    "bsonType": "string"
+                }
+            }
+        },
+        "shippingAddress": {
+            "bsonType": "object",
+            "properties": {
+                "country": {
+                    "bsonType": "object",
+                    "properties": {
+                        "name": {
+                            "bsonType": "string"
+                        }
+                    }
+                },
+                "geo": {
+                    "bsonType": "object",
+                    "properties": {
+                        "coordinates": {
+                            "bsonType": "array",
+                            "items": {
+                                "bsonType": "double"
+                            }
+                        },
+                        "type": {
+                            "bsonType": "string"
+                        }
+                    }
+                },
+                "locality": {
+                    "bsonType": "string"
+                },
+                "name": {
+                    "bsonType": "string"
+                },
+                "phone": {
+                    "bsonType": "string"
+                },
+                "place": {
+                    "bsonType": "objectId"
+                },
+                "postalCode": {
+                    "bsonType": "string"
+                },
+                "streetAddress": {
+                    "bsonType": "string"
+                }
+            }
+        },
+        "shippingMethod": {
+            "bsonType": "object",
+            "properties": {
+                "description": {
+                    "bsonType": "string"
+                },
+                "id": {
+                    "bsonType": "string"
+                },
+                "name": {
+                    "bsonType": "string"
+                }
+            }
+        }
+    },
+    "title": "order"
+}
