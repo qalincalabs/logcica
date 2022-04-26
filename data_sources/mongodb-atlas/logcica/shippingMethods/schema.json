@@ -3,16 +3,7 @@
         "_id": {
             "bsonType": "objectId"
         },
-        "categories": {
-            "bsonType": "array",
-            "items": {
-                "bsonType": "objectId"
-            }
-        },
-        "group": {
-            "bsonType": "objectId"
-        },
-        "gtin": {
+        "description": {
             "bsonType": "string"
         },
         "ids": {
@@ -32,25 +23,25 @@
                 }
             }
         },
-        "sku": {
-            "bsonType": "string"
-        },
-        "weight": {
+        "pickup": {
             "bsonType": "object",
             "properties": {
-                "unit": {
-                    "bsonType": "object",
-                    "properties": {
-                        "code": {
-                            "bsonType": "string"
+                "points": {
+                    "bsonType": "array",
+                    "items": {
+                        "bsonType": "object",
+                        "properties": {
+                            "place": {
+                                "bsonType": "objectId"
+                            }
                         }
                     }
-                },
-                "value": {
-                    "bsonType": "double"
                 }
             }
+        },
+        "type": {
+            "bsonType": "string"
         }
     },
-    "title": "product"
+    "title": "shippingMethod"
 }

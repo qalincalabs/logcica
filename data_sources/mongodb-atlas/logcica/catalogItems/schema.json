@@ -18,6 +18,14 @@
         "name": {
             "bsonType": "string"
         },
+        "owner": {
+            "bsonType": "object",
+            "properties": {
+                "workspace": {
+                    "bsonType": "objectId"
+                }
+            }
+        },
         "product": {
             "bsonType": "objectId"
         },

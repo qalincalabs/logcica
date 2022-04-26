@@ -1,13 +1,25 @@
 {
-    "lines.[].product": {
-        "ref": "#/relationship/mongodb-atlas/logcica/products",
-        "source_key": "lines.[].product",
+    "broker.workspace": {
+        "ref": "#/relationship/mongodb-atlas/logcica/workspaces",
+        "source_key": "broker.workspace",
+        "foreign_key": "_id",
+        "is_list": false
+    },
+    "seller.workspace": {
+        "ref": "#/relationship/mongodb-atlas/logcica/workspaces",
+        "source_key": "seller.workspace",
         "foreign_key": "_id",
         "is_list": false
     },
     "shippingAddress.place": {
         "ref": "#/relationship/mongodb-atlas/logcica/places",
         "source_key": "shippingAddress.place",
+        "foreign_key": "_id",
+        "is_list": false
+    },
+    "shippingMethod": {
+        "ref": "#/relationship/mongodb-atlas/logcica/shippingMethods",
+        "source_key": "shippingMethod",
         "foreign_key": "_id",
         "is_list": false
     }

@@ -11,6 +11,9 @@
                 },
                 "name": {
                     "bsonType": "string"
+                },
+                "workspace": {
+                    "bsonType": "objectId"
                 }
             }
         },
@@ -46,7 +49,12 @@
                         "bsonType": "string"
                     },
                     "item": {
-                        "bsonType": "objectId"
+                        "bsonType": "object",
+                        "properties": {
+                            "_id": {
+                                "bsonType": "objectId"
+                            }
+                        }
                     },
                     "name": {
                         "bsonType": "string"
@@ -74,7 +82,12 @@
                         }
                     },
                     "product": {
-                        "bsonType": "objectId"
+                        "bsonType": "object",
+                        "properties": {
+                            "_id": {
+                                "bsonType": "objectId"
+                            }
+                        }
                     },
                     "quantity": {
                         "bsonType": "object",
@@ -110,11 +123,11 @@
         "seller": {
             "bsonType": "object",
             "properties": {
-                "enterprise": {
-                    "bsonType": "objectId"
-                },
                 "name": {
                     "bsonType": "string"
+                },
+                "workspace": {
+                    "bsonType": "objectId"
                 }
             }
         },
@@ -158,24 +171,13 @@
                 "postalCode": {
                     "bsonType": "string"
                 },
-                "streetAddress": {
+                "street": {
                     "bsonType": "string"
                 }
             }
         },
         "shippingMethod": {
-            "bsonType": "object",
-            "properties": {
-                "description": {
-                    "bsonType": "string"
-                },
-                "id": {
-                    "bsonType": "string"
-                },
-                "name": {
-                    "bsonType": "string"
-                }
-            }
+            "bsonType": "objectId"
         }
     },
     "title": "order"
