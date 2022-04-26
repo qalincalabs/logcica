@@ -4,10 +4,26 @@
             "bsonType": "objectId"
         },
         "enterprise": {
-            "bsonType": "objectId"
+            "bsonType": "object",
+            "properties": {
+                "ids": {
+                    "bsonType": "array",
+                    "items": {
+                        "bsonType": "string"
+                    }
+                }
+            }
         },
         "marketplace": {
-            "bsonType": "objectId"
+            "bsonType": "object",
+            "properties": {
+                "key": {
+                    "bsonType": "string"
+                }
+            }
+        },
+        "name": {
+            "bsonType": "string"
         },
         "person": {
             "bsonType": "objectId"

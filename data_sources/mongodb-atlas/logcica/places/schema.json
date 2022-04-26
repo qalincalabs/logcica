@@ -3,6 +3,28 @@
         "_id": {
             "bsonType": "objectId"
         },
+        "address": {
+            "bsonType": "object",
+            "properties": {
+                "country": {
+                    "bsonType": "object",
+                    "properties": {
+                        "name": {
+                            "bsonType": "string"
+                        }
+                    }
+                },
+                "locality": {
+                    "bsonType": "string"
+                },
+                "postalCode": {
+                    "bsonType": "string"
+                },
+                "street": {
+                    "bsonType": "string"
+                }
+            }
+        },
         "geo": {
             "bsonType": "object",
             "properties": {
@@ -15,6 +37,15 @@
                 "type": {
                     "bsonType": "string"
                 }
+            }
+        },
+        "gln": {
+            "bsonType": "string"
+        },
+        "ids": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "string"
             }
         },
         "name": {

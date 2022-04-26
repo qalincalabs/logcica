@@ -37,25 +37,6 @@
         "date": {
             "bsonType": "date"
         },
-        "items": {
-            "bsonType": "array",
-            "items": {
-                "bsonType": "object",
-                "properties": {
-                    "name": {
-                        "bsonType": "string"
-                    },
-                    "quantity": {
-                        "bsonType": "object",
-                        "properties": {
-                            "value": {
-                                "bsonType": "int"
-                            }
-                        }
-                    }
-                }
-            }
-        },
         "lines": {
             "bsonType": "array",
             "items": {
