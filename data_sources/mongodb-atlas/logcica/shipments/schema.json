@@ -6,8 +6,8 @@
         "carrier": {
             "bsonType": "object",
             "properties": {
-                "enterprise": {
-                    "bsonType": "objectId"
+                "name": {
+                    "bsonType": "string"
                 }
             },
             "title": "transactionParty"
@@ -48,16 +48,16 @@
         "receiver": {
             "bsonType": "object",
             "properties": {
-                "enterprise": {
-                    "bsonType": "objectId"
+                "name": {
+                    "bsonType": "string"
                 }
             }
         },
         "shipper": {
             "bsonType": "object",
             "properties": {
-                "enterprise": {
-                    "bsonType": "objectId"
+                "name": {
+                    "bsonType": "string"
                 }
             }
         }

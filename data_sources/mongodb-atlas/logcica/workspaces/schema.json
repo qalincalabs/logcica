@@ -11,7 +11,16 @@
                     "items": {
                         "bsonType": "string"
                     }
+                },
+                "name": {
+                    "bsonType": "string"
                 }
+            }
+        },
+        "ids": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "string"
             }
         },
         "marketplace": {
@@ -27,6 +36,12 @@
         },
         "person": {
             "bsonType": "objectId"
+        },
+        "place": {
+            "bsonType": "objectId"
+        },
+        "type": {
+            "bsonType": "string"
         }
     },
     "title": "workspace"

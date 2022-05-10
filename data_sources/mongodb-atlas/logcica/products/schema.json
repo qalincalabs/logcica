@@ -9,6 +9,9 @@
                 "bsonType": "objectId"
             }
         },
+        "createdAt": {
+            "bsonType": "date"
+        },
         "group": {
             "bsonType": "objectId"
         },

@@ -178,6 +178,9 @@
         },
         "shippingMethod": {
             "bsonType": "objectId"
+        },
+        "url": {
+            "bsonType": "string"
         }
     },
     "title": "order"
