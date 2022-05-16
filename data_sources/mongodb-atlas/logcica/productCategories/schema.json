@@ -18,6 +18,12 @@
         "id": {
             "bsonType": "string"
         },
+        "ids": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "string"
+            }
+        },
         "name": {
             "bsonType": "string"
         }
