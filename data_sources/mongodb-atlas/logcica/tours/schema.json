@@ -1,0 +1,245 @@
+{
+    "properties": {
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "distance": {
+            "bsonType": "object",
+            "properties": {
+                "unit": {
+                    "bsonType": "object",
+                    "properties": {
+                        "symbol": {
+                            "bsonType": "string"
+                        }
+                    }
+                },
+                "value": {
+                    "bsonType": "int"
+                }
+            }
+        },
+        "duration": {
+            "bsonType": "object",
+            "properties": {
+                "unit": {
+                    "bsonType": "object",
+                    "properties": {
+                        "symbol": {
+                            "bsonType": "string"
+                        }
+                    }
+                },
+                "value": {
+                    "bsonType": "int"
+                }
+            }
+        },
+        "legs": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "object",
+                "properties": {
+                    "destination": {
+                        "bsonType": "object",
+                        "properties": {
+                            "place": {
+                                "bsonType": "objectId"
+                            }
+                        }
+                    },
+                    "distance": {
+                        "bsonType": "object",
+                        "properties": {
+                            "unit": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "symbol": {
+                                        "bsonType": "string"
+                                    }
+                                }
+                            },
+                            "value": {
+                                "bsonType": "int"
+                            }
+                        }
+                    },
+                    "duration": {
+                        "bsonType": "object",
+                        "properties": {
+                            "unit": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "symbol": {
+                                        "bsonType": "string"
+                                    }
+                                }
+                            },
+                            "value": {
+                                "bsonType": "double"
+                            }
+                        }
+                    },
+                    "origin": {
+                        "bsonType": "object",
+                        "properties": {
+                            "place": {
+                                "bsonType": "objectId"
+                            }
+                        }
+                    },
+                    "payload": {
+                        "bsonType": "object",
+                        "properties": {
+                            "shipments": {
+                                "bsonType": "array",
+                                "items": {
+                                    "bsonType": "objectId"
+                                }
+                            },
+                            "volume": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "unit": {
+                                        "bsonType": "object",
+                                        "properties": {
+                                            "symbol": {
+                                                "bsonType": "string"
+                                            }
+                                        }
+                                    },
+                                    "value": {
+                                        "bsonType": "double"
+                                    }
+                                }
+                            },
+                            "weight": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "unit": {
+                                        "bsonType": "object",
+                                        "properties": {
+                                            "symbol": {
+                                                "bsonType": "string"
+                                            }
+                                        }
+                                    },
+                                    "value": {
+                                        "bsonType": "int"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "name": {
+            "bsonType": "string"
+        },
+        "shipments": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        },
+        "stops": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "object",
+                "properties": {
+                    "actualTimeOfArrival": {
+                        "bsonType": "string"
+                    },
+                    "actualTimeOfDeparture": {
+                        "bsonType": "string"
+                    },
+                    "delivery": {
+                        "bsonType": "object",
+                        "properties": {
+                            "shipments": {
+                                "bsonType": "array",
+                                "items": {
+                                    "bsonType": "objectId"
+                                }
+                            }
+                        }
+                    },
+                    "duration": {
+                        "bsonType": "object",
+                        "properties": {
+                            "unit": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "symbol": {
+                                        "bsonType": "string"
+                                    }
+                                }
+                            },
+                            "value": {
+                                "bsonType": "double"
+                            }
+                        }
+                    },
+                    "estimatedTimeOfArrival": {
+                        "bsonType": "string"
+                    },
+                    "estimatedTimeOfDeparture": {
+                        "bsonType": "string"
+                    },
+                    "pickup": {
+                        "bsonType": "object",
+                        "properties": {
+                            "shipments": {
+                                "bsonType": "array",
+                                "items": {
+                                    "bsonType": "objectId"
+                                }
+                            }
+                        }
+                    },
+                    "place": {
+                        "bsonType": "objectId"
+                    },
+                    "tasks": {
+                        "bsonType": "array",
+                        "items": {
+                            "bsonType": "object",
+                            "properties": {
+                                "duration": {
+                                    "bsonType": "object",
+                                    "properties": {
+                                        "unit": {
+                                            "bsonType": "object",
+                                            "properties": {
+                                                "symbol": {
+                                                    "bsonType": "string"
+                                                }
+                                            }
+                                        },
+                                        "value": {
+                                            "bsonType": "double"
+                                        }
+                                    }
+                                },
+                                "name": {
+                                    "bsonType": "string"
+                                },
+                                "shipments": {
+                                    "bsonType": "array",
+                                    "items": {
+                                        "bsonType": "objectId"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "vehicle": {
+            "bsonType": "objectId"
+        }
+    },
+    "title": "tour"
+}

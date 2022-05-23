@@ -137,6 +137,9 @@
                 "country": {
                     "bsonType": "object",
                     "properties": {
+                        "code": {
+                            "bsonType": "string"
+                        },
                         "name": {
                             "bsonType": "string"
                         }

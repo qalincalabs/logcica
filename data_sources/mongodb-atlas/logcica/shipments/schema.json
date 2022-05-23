@@ -3,40 +3,31 @@
         "_id": {
             "bsonType": "objectId"
         },
-        "carrier": {
+        "date": {
+            "bsonType": "string"
+        },
+        "delivery": {
             "bsonType": "object",
             "properties": {
-                "name": {
-                    "bsonType": "string"
+                "place": {
+                    "bsonType": "objectId"
                 }
-            },
-            "title": "transactionParty"
+            }
         },
-        "items": {
+        "lines": {
             "bsonType": "array",
             "items": {
                 "bsonType": "object",
                 "properties": {
+                    "name": {
+                        "bsonType": "string"
+                    },
                     "product": {
                         "bsonType": "objectId"
                     },
                     "quantity": {
                         "bsonType": "object",
                         "properties": {
-                            "unit": {
-                                "bsonType": "object",
-                                "properties": {
-                                    "code": {
-                                        "bsonType": "string"
-                                    },
-                                    "symbol": {
-                                        "bsonType": "string"
-                                    },
-                                    "text": {
-                                        "bsonType": "string"
-                                    }
-                                }
-                            },
                             "value": {
                                 "bsonType": "int"
                             }
@@ -45,19 +36,11 @@
                 }
             }
         },
-        "receiver": {
+        "pickup": {
             "bsonType": "object",
             "properties": {
-                "name": {
-                    "bsonType": "string"
-                }
-            }
-        },
-        "shipper": {
-            "bsonType": "object",
-            "properties": {
-                "name": {
-                    "bsonType": "string"
+                "place": {
+                    "bsonType": "objectId"
                 }
             }
         }

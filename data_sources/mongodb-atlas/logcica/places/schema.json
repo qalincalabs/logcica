@@ -9,6 +9,9 @@
                 "country": {
                     "bsonType": "object",
                     "properties": {
+                        "code": {
+                            "bsonType": "string"
+                        },
                         "ids": {
                             "bsonType": "array",
                             "items": {

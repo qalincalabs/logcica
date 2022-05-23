@@ -1,0 +1,227 @@
+{
+    "properties": {
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "brand": {
+            "bsonType": "object",
+            "properties": {
+                "name": {
+                    "bsonType": "string"
+                }
+            }
+        },
+        "capacity": {
+            "bsonType": "object",
+            "properties": {
+                "volume": {
+                    "bsonType": "object",
+                    "properties": {
+                        "unit": {
+                            "bsonType": "object",
+                            "properties": {
+                                "symbol": {
+                                    "bsonType": "string"
+                                }
+                            }
+                        },
+                        "value": {
+                            "bsonType": "string"
+                        }
+                    }
+                },
+                "weight": {
+                    "bsonType": "object",
+                    "properties": {
+                        "unit": {
+                            "bsonType": "object",
+                            "properties": {
+                                "symbol": {
+                                    "bsonType": "string"
+                                }
+                            }
+                        },
+                        "value": {
+                            "bsonType": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "compartments": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "object",
+                "properties": {
+                    "capacity": {
+                        "bsonType": "object",
+                        "properties": {
+                            "volume": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "unit": {
+                                        "bsonType": "object",
+                                        "properties": {
+                                            "symbol": {
+                                                "bsonType": "string"
+                                            }
+                                        }
+                                    },
+                                    "value": {
+                                        "bsonType": "string"
+                                    }
+                                }
+                            },
+                            "weight": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "unit": {
+                                        "bsonType": "object",
+                                        "properties": {
+                                            "symbol": {
+                                                "bsonType": "string"
+                                            }
+                                        }
+                                    },
+                                    "value": {
+                                        "bsonType": "string"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "features": {
+                        "bsonType": "array",
+                        "items": {
+                            "bsonType": "object",
+                            "properties": {
+                                "key": {
+                                    "bsonType": "string"
+                                },
+                                "name": {
+                                    "bsonType": "string"
+                                }
+                            }
+                        }
+                    },
+                    "name": {
+                        "bsonType": "string"
+                    }
+                }
+            }
+        },
+        "costs": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "object",
+                "properties": {
+                    "driver": {
+                        "bsonType": "object",
+                        "properties": {
+                            "factor": {
+                                "bsonType": "string"
+                            },
+                            "type": {
+                                "bsonType": "string"
+                            },
+                            "unit": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "symbol": {
+                                        "bsonType": "string"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "resource": {
+                        "bsonType": "object",
+                        "properties": {
+                            "currency": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "symbol": {
+                                        "bsonType": "string"
+                                    }
+                                }
+                            },
+                            "key": {
+                                "bsonType": "string"
+                            },
+                            "type": {
+                                "bsonType": "string"
+                            },
+                            "unit": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "symbol": {
+                                        "bsonType": "string"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "unit": {
+                        "bsonType": "object",
+                        "properties": {
+                            "symbol": {
+                                "bsonType": "string"
+                            }
+                        }
+                    },
+                    "value": {
+                        "bsonType": "string"
+                    }
+                }
+            }
+        },
+        "features": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "object",
+                "properties": {
+                    "key": {
+                        "bsonType": "string"
+                    },
+                    "name": {
+                        "bsonType": "string"
+                    }
+                }
+            }
+        },
+        "model": {
+            "bsonType": "object",
+            "properties": {
+                "date": {
+                    "bsonType": "date"
+                },
+                "name": {
+                    "bsonType": "string"
+                }
+            }
+        },
+        "name": {
+            "bsonType": "string"
+        },
+        "type": {
+            "bsonType": "string"
+        },
+        "weight": {
+            "bsonType": "object",
+            "properties": {
+                "unit": {
+                    "bsonType": "object",
+                    "properties": {
+                        "symbol": {
+                            "bsonType": "string"
+                        }
+                    }
+                },
+                "value": {
+                    "bsonType": "double"
+                }
+            }
+        }
+    },
+    "title": "vehicle"
+}

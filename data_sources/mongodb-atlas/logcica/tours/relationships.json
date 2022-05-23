@@ -1,0 +1,14 @@
+{
+    "shipments": {
+        "ref": "#/relationship/mongodb-atlas/logcica/shipments",
+        "source_key": "shipments",
+        "foreign_key": "_id",
+        "is_list": true
+    },
+    "vehicle": {
+        "ref": "#/relationship/mongodb-atlas/logcica/vehicles",
+        "source_key": "vehicle",
+        "foreign_key": "_id",
+        "is_list": false
+    }
+}

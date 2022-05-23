@@ -1,7 +1,19 @@
 {
-    "items.[].product": {
+    "delivery.place": {
+        "ref": "#/relationship/mongodb-atlas/logcica/places",
+        "source_key": "delivery.place",
+        "foreign_key": "_id",
+        "is_list": false
+    },
+    "lines.[].product": {
         "ref": "#/relationship/mongodb-atlas/logcica/products",
-        "source_key": "items.[].product",
+        "source_key": "lines.[].product",
+        "foreign_key": "_id",
+        "is_list": false
+    },
+    "pickup.place": {
+        "ref": "#/relationship/mongodb-atlas/logcica/places",
+        "source_key": "pickup.place",
         "foreign_key": "_id",
         "is_list": false
     }
