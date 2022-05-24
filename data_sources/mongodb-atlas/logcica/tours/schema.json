@@ -3,6 +3,9 @@
         "_id": {
             "bsonType": "objectId"
         },
+        "date": {
+            "bsonType": "date"
+        },
         "distance": {
             "bsonType": "object",
             "properties": {
@@ -15,7 +18,7 @@
                     }
                 },
                 "value": {
-                    "bsonType": "int"
+                    "bsonType": "double"
                 }
             }
         },
@@ -31,7 +34,7 @@
                     }
                 },
                 "value": {
-                    "bsonType": "int"
+                    "bsonType": "double"
                 }
             }
         },
@@ -60,7 +63,7 @@
                                 }
                             },
                             "value": {
-                                "bsonType": "int"
+                                "bsonType": "double"
                             }
                         }
                     },

@@ -26,7 +26,7 @@
                             }
                         },
                         "value": {
-                            "bsonType": "string"
+                            "bsonType": "double"
                         }
                     }
                 },
@@ -42,7 +42,7 @@
                             }
                         },
                         "value": {
-                            "bsonType": "string"
+                            "bsonType": "double"
                         }
                     }
                 }
@@ -68,7 +68,7 @@
                                         }
                                     },
                                     "value": {
-                                        "bsonType": "string"
+                                        "bsonType": "double"
                                     }
                                 }
                             },
@@ -84,7 +84,7 @@
                                         }
                                     },
                                     "value": {
-                                        "bsonType": "string"
+                                        "bsonType": "double"
                                     }
                                 }
                             }
@@ -119,7 +119,7 @@
                         "bsonType": "object",
                         "properties": {
                             "factor": {
-                                "bsonType": "string"
+                                "bsonType": "double"
                             },
                             "type": {
                                 "bsonType": "string"
@@ -170,7 +170,7 @@
                         }
                     },
                     "value": {
-                        "bsonType": "string"
+                        "bsonType": "double"
                     }
                 }
             }
