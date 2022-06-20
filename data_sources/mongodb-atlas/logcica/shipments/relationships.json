@@ -11,6 +11,12 @@
         "foreign_key": "_id",
         "is_list": false
     },
+    "order": {
+        "ref": "#/relationship/mongodb-atlas/logcica/orders",
+        "source_key": "order",
+        "foreign_key": "_id",
+        "is_list": false
+    },
     "pickup.place": {
         "ref": "#/relationship/mongodb-atlas/logcica/places",
         "source_key": "pickup.place",

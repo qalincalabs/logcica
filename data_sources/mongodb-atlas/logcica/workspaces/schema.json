@@ -14,6 +14,9 @@
                 },
                 "name": {
                     "bsonType": "string"
+                },
+                "vatId": {
+                    "bsonType": "string"
                 }
             }
         },

@@ -3,10 +3,15 @@
         "_id": {
             "bsonType": "objectId"
         },
-        "items": {
-            "bsonType": "array",
-            "items": {
-                "bsonType": "objectId"
+        "enterprise": {
+            "bsonType": "objectId"
+        },
+        "owner": {
+            "bsonType": "object",
+            "properties": {
+                "workspace": {
+                    "bsonType": "objectId"
+                }
             }
         }
     },

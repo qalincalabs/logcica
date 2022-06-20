@@ -1,0 +1,8 @@
+{
+    "items": {
+        "ref": "#/relationship/mongodb-atlas/logcica/codes",
+        "source_key": "items",
+        "foreign_key": "_id",
+        "is_list": true
+    }
+}

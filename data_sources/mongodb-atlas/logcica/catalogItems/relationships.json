@@ -1,4 +1,22 @@
 {
+    "catalog": {
+        "ref": "#/relationship/mongodb-atlas/logcica/catalogs",
+        "source_key": "catalog",
+        "foreign_key": "_id",
+        "is_list": false
+    },
+    "inventoryItems": {
+        "ref": "#/relationship/mongodb-atlas/logcica/inventoryItems",
+        "source_key": "inventoryItems",
+        "foreign_key": "_id",
+        "is_list": true
+    },
+    "offers": {
+        "ref": "#/relationship/mongodb-atlas/logcica/offers",
+        "source_key": "offers",
+        "foreign_key": "_id",
+        "is_list": true
+    },
     "owner.workspace": {
         "ref": "#/relationship/mongodb-atlas/logcica/workspaces",
         "source_key": "owner.workspace",

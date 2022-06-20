@@ -1,8 +1,8 @@
 {
-    "items": {
-        "ref": "#/relationship/mongodb-atlas/logcica/catalogItems",
-        "source_key": "items",
+    "owner.workspace": {
+        "ref": "#/relationship/mongodb-atlas/logcica/workspaces",
+        "source_key": "owner.workspace",
         "foreign_key": "_id",
-        "is_list": true
+        "is_list": false
     }
 }

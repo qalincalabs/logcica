@@ -1,0 +1,24 @@
+{
+    "properties": {
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "price": {
+            "bsonType": "object",
+            "properties": {
+                "currency": {
+                    "bsonType": "object",
+                    "properties": {
+                        "code": {
+                            "bsonType": "string"
+                        }
+                    }
+                },
+                "value": {
+                    "bsonType": "double"
+                }
+            }
+        }
+    },
+    "title": "offer"
+}

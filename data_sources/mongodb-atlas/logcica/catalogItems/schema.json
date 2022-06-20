@@ -3,6 +3,9 @@
         "_id": {
             "bsonType": "objectId"
         },
+        "catalog": {
+            "bsonType": "objectId"
+        },
         "categories": {
             "bsonType": "array",
             "items": {
@@ -18,8 +21,20 @@
                 "bsonType": "string"
             }
         },
+        "inventoryItems": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        },
         "name": {
             "bsonType": "string"
+        },
+        "offers": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
         },
         "owner": {
             "bsonType": "object",

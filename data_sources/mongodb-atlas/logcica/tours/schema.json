@@ -190,6 +190,9 @@
                     "estimatedTimeOfDeparture": {
                         "bsonType": "string"
                     },
+                    "order": {
+                        "bsonType": "int"
+                    },
                     "pickup": {
                         "bsonType": "object",
                         "properties": {

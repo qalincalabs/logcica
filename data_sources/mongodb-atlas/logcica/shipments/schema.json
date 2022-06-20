@@ -36,6 +36,9 @@
                 }
             }
         },
+        "order": {
+            "bsonType": "objectId"
+        },
         "pickup": {
             "bsonType": "object",
             "properties": {

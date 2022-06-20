@@ -1,0 +1,8 @@
+{
+    "list": {
+        "ref": "#/relationship/mongodb-atlas/logcica/codeLists",
+        "source_key": "list",
+        "foreign_key": "_id",
+        "is_list": false
+    }
+}
