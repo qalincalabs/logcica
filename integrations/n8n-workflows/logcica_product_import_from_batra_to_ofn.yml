@@ -1,0 +1,856 @@
+name: logcica product import from batra to ofn
+nodes:
+  - parameters: {}
+    name: Start
+    type: n8n-nodes-base.start
+    typeVersion: 1
+    position:
+      - -1500
+      - 160
+  - parameters:
+      functionCode: >-
+        const language = "fr"
+
+
+        // how to handle percentage of nutrient per serving, ....
+
+
+        const product = {
+          ids: [
+            "https://batra.link/gtin/" + item.gtin
+          ],
+          gtin: item.gtin,
+          name: item.productName.find(i => i.language = language).value,
+          createdAt: new Date().toISOString()
+        //  regulatedName: item.regulatedProductName.find(i => i.language =
+        language).value,
+
+        /*,
+          consumerUsageInstructions: [
+            item.consumerUsageInstructions.find(i => i.language = language).value
+          ],
+          consumerStorageInstructions: [
+            item.consumerStorageInstructions.find(i => i.language = language).value
+          ],
+        */
+
+        }
+
+
+        if(item.manufacturer){
+          const manufacturer = item.manufacturer
+
+          const producer = {
+            vatId: item.manufacturer.vatID,
+            name: item.manufacturer.name.find(n => n.language == language).value,
+            gln: item.manufacturer.globalLocationNumber,
+            workspace: {
+              link: "6268316abf9fc4223292d8b3"
+            }
+          }
+          
+          if(manufacturer.address){
+            const address = manufacturer.address[0]
+
+            producer.address = {
+              streetAddress: address.streetAddress,
+              locality: address.addressLocality,
+              country: {
+                code: address.addressCountry
+              },
+              postCode: address.postalCode
+            }
+          }
+
+          product.producer = producer
+        }
+
+
+        if(item.brand)
+          product.brand = {
+            name: item.brand.find(b => b.language == language).value
+          } 
+
+        if(item.gpcCategoryCode)
+          product.categories = [
+            {
+              ids: ["gpc/" + item.gpcCategoryCode],
+              code: item.gpcCategoryCode,
+              classification: {
+                key: "gpc"
+              }
+            }
+          ]
+
+        const productImage = item.image?.find(i => i.referencedFileType ==
+        "PRODUCT_IMAGE")
+
+        if(productImage != null ){}
+          product.images = [{
+            url : productImage.referencedFileURL
+          }]
+
+        // TODO peut-il y avoir plusieurs pays d'origine ?, subdivison code not
+        supported
+
+
+        if(item.countryOfOrigin)
+          product.countryOfOrigin = {
+            code: item.countryOfOrigin[0].countryCode
+          }
+
+        if(item.ingredient != null){
+            product.ingredientList = item.ingredient.map(i => { 
+              const ingr = { 
+                ingredient: {
+                  name: i.ingredientName,
+                },
+                sequence: i.ingredientSequence
+             }
+
+             if(i.ingredientContentPercentage != null)
+
+             ingr.quantity = {
+                percentage: parseFloat(i.ingredientContentPercentage)
+             }
+
+             return ingr
+
+          })
+        }
+
+
+        if(item.hasAllergen != null){
+            product.allergenList = item.hasAllergen.map(i => ({
+            allergen: {
+              code: i.allergenType,
+            },
+            quantity: {
+              level: {
+                code: i.allergenLevelOfContainmentCode
+              }
+            }
+          }))
+        }
+
+
+        if(item.netContent != null){
+
+          const netContentWeight =  item.netContent.find(n => ["GRM","KGM"].includes(n.measurementUnitCode))
+
+          if(netContentWeight != null)
+            product.netWeight = {
+              value: parseFloat(netContentWeight.content),
+              unit: {
+                code: netContentWeight.measurementUnitCode
+              }
+            }
+        }
+
+
+        if(item.percentageOfAlcoholByVolume != null){
+          product.alcohol = {
+            quantity: {
+              percentage: parseFloat(item.percentageOfAlcoholByVolume)
+            }
+          }
+        }
+
+
+        let basisQuantityIndex = -1
+
+        basisQuantityIndex = item.nutrientBasisQuantity?.findIndex(q =>
+        q.unitCode == "GRM" && q.value == 100)
+
+
+        if(basisQuantityIndex > -1){
+          
+          product.nutrientList = []
+
+          for (const [key, value] of Object.entries(item) ) {
+
+            if(key.includes("PerNutrientBasis"))
+              product.nutrientList.push(
+                {
+                  nutrient: { key: key.replace("PerNutrientBasis","")}, 
+                  quantity: { value: value[basisQuantityIndex].value, unit: { code: value[basisQuantityIndex].unitCode } } 
+                })
+
+          }
+        }
+
+
+        return product;
+    name: Map product
+    type: n8n-nodes-base.functionItem
+    typeVersion: 1
+    position:
+      - -120
+      - 140
+  - parameters:
+      functionCode: >-
+        // Code here will run only once, no matter how many input items there
+        are.
+
+        // More info and help: https://docs.n8n.io/nodes/n8n-nodes-base.function
+
+
+        // Loop over inputs and add a new field called 'myNewField' to the JSON
+        of each one
+
+        for (item of items) {
+          item.json.myNewField = 1;
+        }
+
+
+
+
+        return [{
+          json: {
+            codes: items.map(i => i.json.code),
+            lists: [...items.reduce((map, obj) => map.set(obj.json.list.key, obj.json.list.key), new Map()).values()]
+          }
+        }]
+    name: Query data
+    type: n8n-nodes-base.function
+    typeVersion: 1
+    position:
+      - 260
+      - 140
+  - parameters:
+      endpoint: https://realm.mongodb.com/api/client/v2.0/app/logcica-pfufx/graphql
+      requestFormat: json
+      query: |-
+        =query {
+          codes(query: { list: { key_in: {{JSON.stringify($json["lists"])}}}, key_in: {{JSON.stringify($json["codes"])}}}) {
+            _id
+            key
+            name
+            symbol 
+            sequence 
+            list {
+              key 
+            } 
+          }
+        }
+      headerParametersUi:
+        parameter:
+          - name: apiKey
+            value: '={{ $env.COCONUT_MONGO_REALM_API_KEY }}'
+    name: Get codes
+    type: n8n-nodes-base.graphql
+    typeVersion: 1
+    position:
+      - 440
+      - 140
+    alwaysOutputData: true
+  - parameters:
+      url: https://app.openbatra.org/OpenBatra/rss.xml
+    name: Batra RSS read
+    type: n8n-nodes-base.rssFeedRead
+    typeVersion: 1
+    position:
+      - -1320
+      - 260
+  - parameters:
+      conditions:
+        string:
+          - value1: '={{$json["title"]}}'
+            operation: startsWith
+            value2: '0045400002'
+          - value1: '={{$json["title"]}}'
+            value2: '00454000020030'
+    name: Subscription filter
+    type: n8n-nodes-base.if
+    typeVersion: 1
+    position:
+      - -1160
+      - 260
+  - parameters:
+      functionCode: |-
+
+        item.pubDateISO = new Date(item.pubDate.slice(0,10)).toISOString();
+
+        return item;
+    name: ISO date
+    type: n8n-nodes-base.functionItem
+    typeVersion: 1
+    position:
+      - -960
+      - 240
+  - parameters:
+      functionCode: >-
+        items = items.sort((a, b) => new Date(a.json.pubDate) - new
+        Date(b.json.pubDate)).filter((value, index, self) =>
+          index === self.findIndex((t) => (
+            t.json.pubDateISO === value.json.pubDateISO || t.json.title === value.json.title
+          ))
+        )
+
+
+        return items;
+    name: Remove duplicates
+    type: n8n-nodes-base.function
+    typeVersion: 1
+    position:
+      - -780
+      - 240
+  - parameters:
+      functionCode: |-
+        function cleanUpEmpty(obj){
+            return JSON.parse(JSON.stringify(obj), (key, value) => {
+                if (value == null || value == "" || value == "Not Applicable"  || value == [] || value == {})
+                    return undefined;
+                return value;
+            });
+        }
+
+        const newItem = cleanUpEmpty(item);
+
+        delete newItem.packaging
+        delete newItem.countryOfOriginStatement
+
+        return newItem
+    name: Clean up object
+    type: n8n-nodes-base.functionItem
+    typeVersion: 1
+    position:
+      - -320
+      - 140
+  - parameters:
+      functionCode: |-
+        item = {
+          "gtin": "00454000020030",
+          "gpcCategoryCode": "10006122",
+          "gpcCategoryDescription": "",
+          "productName": [{ "value": "Sac de carottes", "language": "fr" }],
+          "regulatedProductName": [],
+          "productMarketingMessage": [],
+          "brand": [{ "value": "logCiCa", "language": "fr" }],
+          "packaging": {
+            "PackagingDetails": {
+              "packagingShape": "Not Applicable",
+              "hasReturnablePackageDeposit": [],
+              "packagingFeature": "Not Applicable",
+              "packagingFunction": "Not Applicable",
+              "packagingMaterial": [],
+              "packagingType": "",
+              "packagingRecyclingScheme": "Not Applicable",
+              "packagingRecyclingProcessType": "Not Applicable"
+            }
+          },
+          "consumerStorageInstructions": [],
+          "consumerHandlingStorage": [],
+          "numberOfServingsPerPackage": 0,
+          "numberOfServingsRangeDescription": [],
+          "servingSuggestion": [],
+          "referencedFile": [],
+          "netContent": [{ "value": 100, "unitCode": "GRM" }],
+          "grossWeight": [],
+          "drainedWeight": [],
+          "outOfPackageWidth": [],
+          "outOfPackageHeight": [],
+          "outOfPackageDepth": [],
+          "outOfPackageDiameter": [],
+          "ingredient": [
+            {
+              "ingredientContentPercentage": 100,
+              "ingredientName": "Carotte",
+              "ingredientSequence": 0
+            }
+          ],
+          "hasAllergen": [
+            { "allergenLevelOfContainmentCode": "CONTAINS", "allergenType": "NW" }
+          ],
+          "countryOfOrigin": [
+            { "countryCode": "BE", "countrySubdivisionCode": "BE_WLX" }
+          ],
+          "countryOfOriginStatement": [{ "value": "", "language": "fr" }],
+          "nutrientMeasurementPrecision": ["Approximately"],
+          "nutrientBasisQuantityType": [],
+          "nutrientBasisQuantity": [{ "value": 100, "unitCode": "GRM" }],
+          "energyPerNutrientBasis": [
+            { "dailyValueIntakePercent": 10, "value": 300, "unitCode": "GRM" }
+          ],
+          "fatPerNutrientBasis": [
+            { "dailyValueIntakePercent": 4, "value": 2, "unitCode": "GRM" }
+          ],
+          "saturatedFatPerNutrientBasis": [
+            { "dailyValueIntakePercent": 4, "value": 2, "unitCode": "GRM" }
+          ],
+          "carbohydratesPerNutrientBasis": [
+            { "dailyValueIntakePercent": 10, "value": 9.5, "unitCode": "GRM" }
+          ],
+          "sugarsPerNutrientBasis": [
+            { "dailyValueIntakePercent": 15, "value": 3, "unitCode": "GRM" }
+          ],
+          "proteinPerNutrientBasis": [
+            { "dailyValueIntakePercent": 4, "value": 5, "unitCode": "GRM" }
+          ],
+          "saltPerNutrientBasis": [
+            { "dailyValueIntakePercent": 3, "value": 4, "unitCode": "GRM" }
+          ],
+          "packagingMarkedLabelAccreditation": ["VEGAN_NATURAL_FOOD_CERTIFIERS"],
+          "isWashedReadyToEat": "Not Applicable",
+          "isPittedStoned": "Not Applicable",
+          "isSeedless": "Not Applicable",
+          "isShelledPeeled": "Not Applicable",
+          "maturationMethod": "Not Applicable",
+          "percentageOfAlcoholByVolume": 0,
+          "isFromConcentrate": "Not Applicable",
+          "vintner": "",
+          "beverageVintage": "",
+          "isVintage": "Not Applicable",
+          "alcoholicBeverageSubregion": "",
+          "isDecaffeinated": "Not Applicable",
+          "isCarbonated": "Not Applicable",
+          "bonelessClaim": "Not Applicable",
+          "anatomicalForm": "Not Applicable",
+          "minimumMeatPoultryContent": [],
+          "meatPoultryType": "",
+          "isHomogenised": "Not Applicable",
+          "fatInMilkContent": 0,
+          "cheeseMaturationPeriodDescription": "",
+          "isRindEdible": "Not Applicable",
+          "cheeseFirmness": "Not Applicable",
+          "sharpnessOfCheese": "Not Applicable",
+          "fatpercentageInDryMatter": 0,
+          "fishType": "",
+          "freshOrSeawaterFarmed": "Not Applicable",
+          "catchZone": "",
+          "minimumFishContent": [],
+          "image": [],
+          "manufacturer": {
+            "taxID": "",
+            "vatID": "BE407626464",
+            "globalLocationNumber": "0454000020009",
+            "name": [{ "language": "fr", "value": "Qalinca Labs" }],
+            "address": [
+              {
+                "streetAddress": "Av. Franklin Roosevelt 50",
+                "postalCode": "1050",
+                "addressLocality": "Ixelles",
+                "addressCountry": "056"
+              }
+            ],
+            "contactPoint": [
+              {
+                "contactTitle": "IT",
+                "contactType": "IT SUPPORT",
+                "availableLanguage": "fr",
+                "telephone": "+32 2 650 34 67",
+                "faxNumber": "",
+                "email": "info@qalinca-labs.be"
+              }
+            ]
+          }
+        }
+
+        const item2 = JSON.parse(JSON.stringify(item))
+        delete item2.hasAllergen
+
+        return [item,item2];
+    name: Stub Batra
+    type: n8n-nodes-base.function
+    typeVersion: 1
+    position:
+      - -980
+      - 0
+  - parameters:
+      functionCode: >-
+        let codes = []
+
+
+        for (item of items) {
+
+          const product = item.json
+
+          codes = codes.concat(
+            product.allergenList?.map(i => ({
+              code: i.allergen?.code,
+              list: {
+                key: "allergens-gs1-benelux"
+              }
+            })))
+
+          codes = codes.concat(
+            product.allergenList?.map(i => ({
+            code: i.quantity?.level?.code,
+            list: {
+              key: "levels-of-containment-gs1-benelux"
+            }
+          })))
+
+          codes = codes.concat(
+            product.nutrientList?.map(i => ( {
+              code: i.nutrient?.key,
+              list: {
+                key: "nutrients-gs1-voc"
+              }
+          })))
+
+          codes = codes.concat(
+            product.nutrientList?.map(i => ( {
+              code: i.quantity?.unit?.code,
+              list: {
+                key: "units-un-cefact"
+              }
+          })))
+
+          if(product.countryOfOrigin)
+            codes.push({
+              code: product.countryOfOrigin.code,
+              list: {
+                key: "countries-iso"
+              }
+
+            })
+
+        }
+
+
+        codes = codes.filter(c => c != null && c.code != null)
+
+
+        return [...codes.reduce((map, obj) => map.set(obj.list.key + "-" +
+        obj.code, obj), new Map()).values()];
+    name: Codes
+    type: n8n-nodes-base.function
+    typeVersion: 1
+    position:
+      - 80
+      - 140
+  - parameters: {}
+    name: NoOp
+    type: n8n-nodes-base.noOp
+    typeVersion: 1
+    position:
+      - -960
+      - 420
+  - parameters:
+      functionCode: return $items("Map product") ;
+    name: Products
+    type: n8n-nodes-base.function
+    typeVersion: 1
+    position:
+      - 620
+      - 140
+  - parameters:
+      url: '={{$json["link"]}}'
+      options: {}
+    name: HTTP Request1
+    type: n8n-nodes-base.httpRequest
+    typeVersion: 2
+    position:
+      - -600
+      - 240
+  - parameters:
+      functionCode: |-
+        const product = $node["Products"].json
+        const templating = $node["OFN description"].json
+
+        const ofnProduct = {
+          name: product.name,
+          price: "0", // default
+          shipping_category_id: 1, // default
+          supplier_id: 591, // TODO replace
+          primary_taxon_id: 2, // default
+          variant_unit: "items",
+          variant_unit_name: " unité",
+          unit_value: 1,
+          //unit_description: "botte",
+          //variant_unit_scale: 0.1
+          // all above is mandatory
+          description: templating.description,
+          sku: product.gtin,
+          //display_name: "test",
+          //category_id: 2, // map gs1 ofn categories
+          tax_category_id: 1,
+          meta_description: product.gtin,
+          meta_keywords: product.gtin, // for web search
+
+        }
+
+        return ofnProduct;
+    name: OFN product
+    type: n8n-nodes-base.functionItem
+    typeVersion: 1
+    position:
+      - 960
+      - 140
+  - parameters:
+      functionCode: >-
+        const product = item
+
+        const codes = $items("Get codes")[0]?.json?.data?.codes ?? []
+
+
+        // for netWeight ${codes.find(c => c.key ==
+        product.netWeight.unit.code).symbol}
+
+
+        const findCode = (key, listKey) => {
+          return codes.find(c => c.key == key && c.list.key == listKey)
+        }
+
+
+        const templating = {
+          description: 
+        `
+
+        <p>
+          <a href="https://www.batra.link/productFull.html?gtin=${ product.gtin }">
+            Fiche produit sur OpenBatra
+          </a>
+        </p>
+
+        <p>
+          ${product.countryOfOrigin ? `<u>Pays d'origine:</u> ${findCode(product.countryOfOrigin.code,"countries-iso")?.name ?? product.countryOfOrigin.code}` : ""}
+          ${product.netWeight ? `<br/><u>Poids net:</u> ${product.netWeight}` : ""} 
+          ${product.alcohol ? `<br/><u>Pourcentage d'alcool:</u> ${product.alcohol.quantity.percentage}%` : ""}
+        </p>
+
+
+        ${product.ingredientList ? `
+
+        <p>
+
+        <strong>Ingrédients</strong>
+
+        </p>
+
+
+        <p>
+
+        ${product.ingredientList.map(i => 
+          `${i.ingredient.name}${i.quantity?.percentage ? `(${i.quantity?.percentage}%)` : "" }`)
+        .join(", ")}
+
+        </p>
+
+        ` : ""
+
+        }
+
+
+
+        ${product.allergenList ?
+
+        `
+
+        <p>
+
+        <strong>Allergènes</strong>
+
+        </p>
+
+
+        <p>
+
+        ${product.allergenList.map(i => 
+          `${codes.find(c => c.key == i.quantity.level.code)?.name} ${codes.find(c => c.key == i.allergen.code)?.name}`)
+        .join("<br/>")}
+
+        </p>
+
+        ` : ""
+
+        }
+
+
+        ${product.nutrientList ?
+
+        `
+
+        <p>
+          <strong>Nutrition</strong>
+        </p>
+
+
+        ${product.nutrientList.map(i => {
+
+          const nutrient = findCode(i.nutrient.key,"nutrients-gs1-voc")
+           return `<p>${nutrient.sequence.includes(".") ? "&nbsp;&nbsp;dont " : ""} ${nutrient?.name ?? i.nutrient.key}: 
+         ${i.quantity.value} ${codes.find(c => c.key == i.quantity.unit.code).symbol}</p>`
+        }).join("")}
+
+        ` : ""
+
+        }
+
+
+
+
+
+        ${product.consumerUsageInstructions != null ? `
+          <p>
+            <strong>Instructions d'utilisation</strong>
+          </p>
+
+          ${product.consumerUsageInstructions }
+
+        ` : ""}
+
+
+        ${product.consumerStorageInstructions != null ? `
+          <p>
+            <strong>Instructions de stockage</strong>
+          </p>
+
+          ${product.consumerStorageInstructions }
+
+        ` : ""}
+
+        `
+
+        }
+
+
+
+        return templating;
+    name: OFN description
+    type: n8n-nodes-base.functionItem
+    typeVersion: 1
+    position:
+      - 780
+      - 140
+  - parameters:
+      url: '={{$node["Products"].json["images"][0]["url"]}}'
+      responseFormat: file
+      options: {}
+    name: Get image
+    type: n8n-nodes-base.httpRequest
+    typeVersion: 2
+    position:
+      - 1380
+      - 140
+  - parameters:
+      authentication: genericCredentialType
+      genericAuthType: httpHeaderAuth
+      requestMethod: POST
+      url: https://openfoodnetwork.be/api/v0/products
+      jsonParameters: true
+      options: {}
+      bodyParametersJson: |-
+        ={ 
+        "product":{{JSON.stringify( $json)}}
+        }
+    name: Create product
+    type: n8n-nodes-base.httpRequest
+    typeVersion: 2
+    position:
+      - 1180
+      - 140
+    credentials:
+      httpHeaderAuth:
+        id: '8'
+        name: ofn be demo account
+  - parameters:
+      authentication: genericCredentialType
+      genericAuthType: httpHeaderAuth
+      requestMethod: POST
+      url: >-
+        =https://openfoodnetwork.be/api/v0/product_images/{{$node["Create
+        product"].json["id"]}}
+      jsonParameters: true
+      options:
+        bodyContentType: multipart-form-data
+      sendBinaryData: true
+    name: Create image
+    type: n8n-nodes-base.httpRequest
+    typeVersion: 2
+    position:
+      - 1560
+      - 140
+    credentials:
+      httpHeaderAuth:
+        id: '8'
+        name: ofn be demo account
+connections:
+  Start:
+    main:
+      - - node: Batra RSS read
+          type: main
+          index: 0
+  Map product:
+    main:
+      - - node: Codes
+          type: main
+          index: 0
+  Query data:
+    main:
+      - - node: Get codes
+          type: main
+          index: 0
+  Batra RSS read:
+    main:
+      - - node: Subscription filter
+          type: main
+          index: 0
+  Subscription filter:
+    main:
+      - - node: ISO date
+          type: main
+          index: 0
+      - - node: NoOp
+          type: main
+          index: 0
+  ISO date:
+    main:
+      - - node: Remove duplicates
+          type: main
+          index: 0
+  Remove duplicates:
+    main:
+      - - node: HTTP Request1
+          type: main
+          index: 0
+  Clean up object:
+    main:
+      - - node: Map product
+          type: main
+          index: 0
+  Codes:
+    main:
+      - - node: Query data
+          type: main
+          index: 0
+  Get codes:
+    main:
+      - - node: Products
+          type: main
+          index: 0
+  Products:
+    main:
+      - - node: OFN description
+          type: main
+          index: 0
+  HTTP Request1:
+    main:
+      - - node: Clean up object
+          type: main
+          index: 0
+  OFN description:
+    main:
+      - - node: OFN product
+          type: main
+          index: 0
+  OFN product:
+    main:
+      - - node: Create product
+          type: main
+          index: 0
+  Create product:
+    main:
+      - - node: Get image
+          type: main
+          index: 0
+  Get image:
+    main:
+      - - node: Create image
+          type: main
+          index: 0
+active: false
+settings: {}
+id: 17
+tags: []
