@@ -1,9 +1,27 @@
 {
+    "allergenList.[].allergen": {
+        "ref": "#/relationship/mongodb-atlas/logcica/codes",
+        "source_key": "allergenList.[].allergen",
+        "foreign_key": "_id",
+        "is_list": false
+    },
+    "allergenList.[].quantity.level": {
+        "ref": "#/relationship/mongodb-atlas/logcica/codes",
+        "source_key": "allergenList.[].quantity.level",
+        "foreign_key": "_id",
+        "is_list": false
+    },
     "categories": {
         "ref": "#/relationship/mongodb-atlas/logcica/productCategories",
         "source_key": "categories",
         "foreign_key": "_id",
         "is_list": true
+    },
+    "countryOfOrigin": {
+        "ref": "#/relationship/mongodb-atlas/logcica/codes",
+        "source_key": "countryOfOrigin",
+        "foreign_key": "_id",
+        "is_list": false
     },
     "group": {
         "ref": "#/relationship/mongodb-atlas/logcica/productGroups",
@@ -11,9 +29,39 @@
         "foreign_key": "_id",
         "is_list": false
     },
+    "netWeight.unit": {
+        "ref": "#/relationship/mongodb-atlas/logcica/codes",
+        "source_key": "netWeight.unit",
+        "foreign_key": "_id",
+        "is_list": false
+    },
+    "nutrientList.[].nutrient": {
+        "ref": "#/relationship/mongodb-atlas/logcica/codes",
+        "source_key": "nutrientList.[].nutrient",
+        "foreign_key": "_id",
+        "is_list": false
+    },
+    "nutrientList.[].quantity.unit": {
+        "ref": "#/relationship/mongodb-atlas/logcica/codes",
+        "source_key": "nutrientList.[].quantity.unit",
+        "foreign_key": "_id",
+        "is_list": false
+    },
+    "owner.place": {
+        "ref": "#/relationship/mongodb-atlas/logcica/places",
+        "source_key": "owner.place",
+        "foreign_key": "_id",
+        "is_list": false
+    },
     "owner.workspace": {
         "ref": "#/relationship/mongodb-atlas/logcica/workspaces",
         "source_key": "owner.workspace",
+        "foreign_key": "_id",
+        "is_list": false
+    },
+    "producer.workspace": {
+        "ref": "#/relationship/mongodb-atlas/logcica/workspaces",
+        "source_key": "producer.workspace",
         "foreign_key": "_id",
         "is_list": false
     }

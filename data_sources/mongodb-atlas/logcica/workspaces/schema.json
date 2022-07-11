@@ -26,6 +26,9 @@
                 "bsonType": "string"
             }
         },
+        "key": {
+            "bsonType": "string"
+        },
         "marketplace": {
             "bsonType": "object",
             "properties": {

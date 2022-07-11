@@ -1,4 +1,10 @@
 {
+    "owner.workspace": {
+        "ref": "#/relationship/mongodb-atlas/logcica/workspaces",
+        "source_key": "owner.workspace",
+        "foreign_key": "_id",
+        "is_list": false
+    },
     "shipments": {
         "ref": "#/relationship/mongodb-atlas/logcica/shipments",
         "source_key": "shipments",

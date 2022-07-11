@@ -203,6 +203,14 @@
         "name": {
             "bsonType": "string"
         },
+        "owner": {
+            "bsonType": "object",
+            "properties": {
+                "workspace": {
+                    "bsonType": "objectId"
+                }
+            }
+        },
         "type": {
             "bsonType": "string"
         },

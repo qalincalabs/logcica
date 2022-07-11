@@ -12,6 +12,9 @@
         "name": {
             "bsonType": "string"
         },
+        "sequence": {
+            "bsonType": "string"
+        },
         "symbol": {
             "bsonType": "string"
         }

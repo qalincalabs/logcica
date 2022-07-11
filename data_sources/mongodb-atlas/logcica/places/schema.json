@@ -34,6 +34,9 @@
                 }
             }
         },
+        "code": {
+            "bsonType": "string"
+        },
         "geo": {
             "bsonType": "object",
             "properties": {
@@ -66,6 +69,18 @@
                 "workspace": {
                     "bsonType": "objectId"
                 }
+            }
+        },
+        "types": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "string"
+            }
+        },
+        "withinAreas": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
             }
         }
     },

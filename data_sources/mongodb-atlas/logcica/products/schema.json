@@ -3,11 +3,41 @@
         "_id": {
             "bsonType": "objectId"
         },
+        "allergenList": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "object",
+                "properties": {
+                    "allergen": {
+                        "bsonType": "objectId"
+                    },
+                    "quantity": {
+                        "bsonType": "object",
+                        "properties": {
+                            "level": {
+                                "bsonType": "objectId"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "brand": {
+            "bsonType": "object",
+            "properties": {
+                "name": {
+                    "bsonType": "string"
+                }
+            }
+        },
         "categories": {
             "bsonType": "array",
             "items": {
                 "bsonType": "objectId"
             }
+        },
+        "countryOfOrigin": {
+            "bsonType": "objectId"
         },
         "createdAt": {
             "bsonType": "date"
@@ -24,16 +54,101 @@
                 "bsonType": "string"
             }
         },
+        "images": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "object",
+                "properties": {
+                    "url": {
+                        "bsonType": "string"
+                    }
+                }
+            }
+        },
+        "ingredientList": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "object",
+                "properties": {
+                    "ingredient": {
+                        "bsonType": "object",
+                        "properties": {
+                            "name": {
+                                "bsonType": "string"
+                            }
+                        }
+                    },
+                    "quantity": {
+                        "bsonType": "object",
+                        "properties": {
+                            "percentage": {
+                                "bsonType": "int"
+                            }
+                        }
+                    },
+                    "sequence": {
+                        "bsonType": "string"
+                    }
+                }
+            }
+        },
         "name": {
             "bsonType": "string"
         },
+        "netWeight": {
+            "bsonType": "object",
+            "properties": {
+                "unit": {
+                    "bsonType": "objectId"
+                },
+                "value": {
+                    "bsonType": "double"
+                }
+            }
+        },
+        "nutrientList": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "object",
+                "properties": {
+                    "nutrient": {
+                        "bsonType": "objectId"
+                    },
+                    "quantity": {
+                        "bsonType": "object",
+                        "properties": {
+                            "unit": {
+                                "bsonType": "objectId"
+                            },
+                            "value": {
+                                "bsonType": "int"
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "owner": {
+            "bsonType": "object",
+            "properties": {
+                "place": {
+                    "bsonType": "objectId"
+                },
+                "workspace": {
+                    "bsonType": "objectId"
+                }
+            }
+        },
+        "producer": {
             "bsonType": "object",
             "properties": {
                 "workspace": {
                     "bsonType": "objectId"
                 }
             }
+        },
+        "publishedAt": {
+            "bsonType": "date"
         },
         "sku": {
             "bsonType": "string"

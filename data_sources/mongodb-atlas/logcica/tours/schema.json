@@ -140,6 +140,14 @@
         "name": {
             "bsonType": "string"
         },
+        "owner": {
+            "bsonType": "object",
+            "properties": {
+                "workspace": {
+                    "bsonType": "objectId"
+                }
+            }
+        },
         "shipments": {
             "bsonType": "array",
             "items": {
@@ -152,10 +160,10 @@
                 "bsonType": "object",
                 "properties": {
                     "actualTimeOfArrival": {
-                        "bsonType": "string"
+                        "bsonType": "date"
                     },
                     "actualTimeOfDeparture": {
-                        "bsonType": "string"
+                        "bsonType": "date"
                     },
                     "delivery": {
                         "bsonType": "object",
@@ -185,10 +193,10 @@
                         }
                     },
                     "estimatedTimeOfArrival": {
-                        "bsonType": "string"
+                        "bsonType": "date"
                     },
                     "estimatedTimeOfDeparture": {
-                        "bsonType": "string"
+                        "bsonType": "date"
                     },
                     "order": {
                         "bsonType": "int"

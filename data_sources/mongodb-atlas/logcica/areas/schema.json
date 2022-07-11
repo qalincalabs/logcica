@@ -1,0 +1,26 @@
+{
+    "properties": {
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "code": {
+            "bsonType": "string"
+        },
+        "name": {
+            "bsonType": "string"
+        },
+        "types": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "string"
+            }
+        },
+        "withinAreas": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        }
+    },
+    "title": "area"
+}
