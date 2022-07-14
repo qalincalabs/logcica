@@ -4,13 +4,36 @@
             "bsonType": "objectId"
         },
         "date": {
-            "bsonType": "string"
+            "bsonType": "date"
         },
         "delivery": {
             "bsonType": "object",
             "properties": {
+                "country": {
+                    "bsonType": "object",
+                    "properties": {
+                        "name": {
+                            "bsonType": "string"
+                        }
+                    }
+                },
+                "locality": {
+                    "bsonType": "string"
+                },
+                "name": {
+                    "bsonType": "string"
+                },
+                "phone": {
+                    "bsonType": "string"
+                },
                 "place": {
                     "bsonType": "objectId"
+                },
+                "postalCode": {
+                    "bsonType": "string"
+                },
+                "street": {
+                    "bsonType": "string"
                 }
             }
         },
@@ -32,9 +55,23 @@
                                 "bsonType": "int"
                             }
                         }
+                    },
+                    "weight": {
+                        "bsonType": "object",
+                        "properties": {
+                            "unit": {
+                                "bsonType": "objectId"
+                            },
+                            "value": {
+                                "bsonType": "double"
+                            }
+                        }
                     }
                 }
             }
+        },
+        "method": {
+            "bsonType": "objectId"
         },
         "order": {
             "bsonType": "objectId"
@@ -44,6 +81,14 @@
             "properties": {
                 "place": {
                     "bsonType": "objectId"
+                }
+            }
+        },
+        "weight": {
+            "bsonType": "object",
+            "properties": {
+                "value": {
+                    "bsonType": "double"
                 }
             }
         }

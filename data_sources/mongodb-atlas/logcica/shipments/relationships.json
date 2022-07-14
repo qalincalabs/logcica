@@ -11,6 +11,12 @@
         "foreign_key": "_id",
         "is_list": false
     },
+    "method": {
+        "ref": "#/relationship/mongodb-atlas/logcica/shippingMethods",
+        "source_key": "method",
+        "foreign_key": "_id",
+        "is_list": false
+    },
     "order": {
         "ref": "#/relationship/mongodb-atlas/logcica/orders",
         "source_key": "order",
