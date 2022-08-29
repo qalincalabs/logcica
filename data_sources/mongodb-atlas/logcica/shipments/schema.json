@@ -37,6 +37,9 @@
                 }
             }
         },
+        "key": {
+            "bsonType": "string"
+        },
         "lines": {
             "bsonType": "array",
             "items": {
@@ -83,6 +86,9 @@
                     "bsonType": "objectId"
                 }
             }
+        },
+        "status": {
+            "bsonType": "string"
         },
         "weight": {
             "bsonType": "object",

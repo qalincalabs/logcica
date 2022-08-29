@@ -1,0 +1,152 @@
+{
+    "properties": {
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "distance": {
+            "bsonType": "object",
+            "properties": {
+                "unit": {
+                    "bsonType": "object",
+                    "properties": {
+                        "symbol": {
+                            "bsonType": "string"
+                        }
+                    }
+                },
+                "value": {
+                    "bsonType": "double"
+                }
+            }
+        },
+        "duration": {
+            "bsonType": "object",
+            "properties": {
+                "unit": {
+                    "bsonType": "object",
+                    "properties": {
+                        "symbol": {
+                            "bsonType": "string"
+                        }
+                    }
+                },
+                "value": {
+                    "bsonType": "double"
+                }
+            }
+        },
+        "optimisation": {
+            "bsonType": "object",
+            "properties": {
+                "status": {
+                    "bsonType": "string"
+                }
+            }
+        },
+        "owner": {
+            "bsonType": "object",
+            "properties": {
+                "workspace": {
+                    "bsonType": "objectId"
+                }
+            }
+        },
+        "shipments": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            },
+            "uniqueItems": true
+        },
+        "stops": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "object",
+                "properties": {
+                    "delivery": {
+                        "bsonType": "object",
+                        "properties": {
+                            "shipments": {
+                                "bsonType": "array",
+                                "items": {
+                                    "bsonType": "objectId"
+                                }
+                            }
+                        }
+                    },
+                    "duration": {
+                        "bsonType": "object",
+                        "properties": {
+                            "unit": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "symbol": {
+                                        "bsonType": "string"
+                                    }
+                                }
+                            },
+                            "value": {
+                                "bsonType": "double"
+                            }
+                        }
+                    },
+                    "estimatedTimeOfArrival": {
+                        "bsonType": "date"
+                    },
+                    "estimatedTimeOfDeparture": {
+                        "bsonType": "date"
+                    },
+                    "geo": {
+                        "bsonType": "object",
+                        "properties": {
+                            "coordinates": {
+                                "bsonType": "array",
+                                "items": {
+                                    "bsonType": "double"
+                                }
+                            },
+                            "type": {
+                                "bsonType": "string"
+                            }
+                        }
+                    },
+                    "name": {
+                        "bsonType": "string"
+                    },
+                    "order": {
+                        "bsonType": "int"
+                    },
+                    "pickup": {
+                        "bsonType": "object",
+                        "properties": {
+                            "shipments": {
+                                "bsonType": "array",
+                                "items": {
+                                    "bsonType": "objectId"
+                                }
+                            }
+                        }
+                    },
+                    "place": {
+                        "bsonType": "objectId"
+                    }
+                }
+            }
+        },
+        "tour": {
+            "bsonType": "objectId"
+        },
+        "validation": {
+            "bsonType": "object",
+            "properties": {
+                "status": {
+                    "bsonType": "string"
+                }
+            }
+        },
+        "vehicle": {
+            "bsonType": "objectId"
+        }
+    },
+    "title": "tourDraft"
+}

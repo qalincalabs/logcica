@@ -138,7 +138,8 @@
             }
         },
         "name": {
-            "bsonType": "string"
+            "bsonType": "string",
+            "maxLength": 50
         },
         "owner": {
             "bsonType": "object",
@@ -152,7 +153,8 @@
             "bsonType": "array",
             "items": {
                 "bsonType": "objectId"
-            }
+            },
+            "uniqueItems": true
         },
         "stops": {
             "bsonType": "array",
@@ -197,6 +199,23 @@
                     },
                     "estimatedTimeOfDeparture": {
                         "bsonType": "date"
+                    },
+                    "geo": {
+                        "bsonType": "object",
+                        "properties": {
+                            "coordinates": {
+                                "bsonType": "array",
+                                "items": {
+                                    "bsonType": "double"
+                                }
+                            },
+                            "type": {
+                                "bsonType": "string"
+                            }
+                        }
+                    },
+                    "name": {
+                        "bsonType": "string"
                     },
                     "order": {
                         "bsonType": "int"

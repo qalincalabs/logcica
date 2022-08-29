@@ -1,0 +1,39 @@
+{
+    "collection": "tourDrafts",
+    "database": "logcica",
+    "roles": [
+        {
+            "name": "readAllWriteSome",
+            "apply_when": {},
+            "fields": {
+                "distance": {
+                    "write": false,
+                    "read": true
+                },
+                "duration": {
+                    "write": false,
+                    "read": true
+                },
+                "optimization": {
+                    "write": false,
+                    "read": true
+                },
+                "stops": {
+                    "write": false,
+                    "read": true
+                },
+                "validation": {
+                    "write": false,
+                    "read": true
+                }
+            },
+            "insert": true,
+            "delete": true,
+            "search": true,
+            "additional_fields": {
+                "write": true,
+                "read": true
+            }
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "owner.workspace": {
+        "ref": "#/relationship/mongodb-atlas/logcica/workspaces",
+        "source_key": "owner.workspace",
+        "foreign_key": "_id",
+        "is_list": false
+    },
+    "shipments": {
+        "ref": "#/relationship/mongodb-atlas/logcica/shipments",
+        "source_key": "shipments",
+        "foreign_key": "_id",
+        "is_list": true
+    },
+    "tour": {
+        "ref": "#/relationship/mongodb-atlas/logcica/tours",
+        "source_key": "tour",
+        "foreign_key": "_id",
+        "is_list": false
+    },
+    "vehicle": {
+        "ref": "#/relationship/mongodb-atlas/logcica/vehicles",
+        "source_key": "vehicle",
+        "foreign_key": "_id",
+        "is_list": false
+    }
+}
