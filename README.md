@@ -9,3 +9,30 @@ Powered by mongoDB Atlas. You can [explore the model](/data_sources/mongodb-atla
 [Latest slides](/docs/logcica-comac-2022-06.pdf)
 
 ![platform schema](/docs/images/logcica-platform-schema-2022-05.png)
+
+## Concepts the platform understands
+
+* shipment and shipping method
+* tour and tour draft
+* place and area
+* vehicle
+* workspace
+* order
+* product, product category, product classification (linked to category)
+* catalog and catalog item
+* code and code lists (such country iso codes, allergen gs1 codes)
+* inventory item
+* offer
+* transactionnel channel
+* customer
+* supplier
+
+[json schema](https://github.com/qalincalabs/logcica/tree/main/data_sources/mongodb-atlas/logcica)
+
+## Concepts the platform will soon understand :)
+
+* carrier
+* carrier profile, shipper profile, producer profile
+* transport demand, transport offer
+
+
