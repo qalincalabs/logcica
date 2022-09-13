@@ -21,6 +21,7 @@ Powered by mongoDB Atlas. You can [explore the model](/data_sources/mongodb-atla
 * product, product category, product classification (linked to category)
 * catalog and catalog item
 * code and code lists (such country iso codes, allergen gs1 codes)
+* sales session
 * inventory item
 * offer
 * transactionnel channel
