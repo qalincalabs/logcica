@@ -1,0 +1,621 @@
+{
+    "properties": {
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "input": {
+            "bsonType": "object",
+            "properties": {
+                "catalogItems": {
+                    "bsonType": "array",
+                    "items": {
+                        "bsonType": "object",
+                        "properties": {
+                            "catalog": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "ids": {
+                                        "bsonType": "array",
+                                        "items": {
+                                            "bsonType": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "ids": {
+                                "bsonType": "array",
+                                "items": {
+                                    "bsonType": "string"
+                                }
+                            },
+                            "name": {
+                                "bsonType": "string"
+                            },
+                            "product": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "ids": {
+                                        "bsonType": "array",
+                                        "items": {
+                                            "bsonType": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "catalogs": {
+                    "bsonType": "array",
+                    "items": {
+                        "bsonType": "object",
+                        "properties": {
+                            "ids": {
+                                "bsonType": "array",
+                                "items": {
+                                    "bsonType": "string"
+                                }
+                            },
+                            "owner": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "workspace": {
+                                        "bsonType": "object",
+                                        "properties": {
+                                            "ids": {
+                                                "bsonType": "array",
+                                                "items": {
+                                                    "bsonType": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "codes": {
+                    "bsonType": "array",
+                    "items": {
+                        "bsonType": "object",
+                        "properties": {
+                            "ids": {
+                                "bsonType": "array",
+                                "items": {
+                                    "bsonType": "string"
+                                }
+                            },
+                            "list": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "ids": {
+                                        "bsonType": "array",
+                                        "items": {
+                                            "bsonType": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "name": {
+                                "bsonType": "string"
+                            }
+                        }
+                    }
+                },
+                "customers": {
+                    "bsonType": "array",
+                    "items": {
+                        "bsonType": "object",
+                        "properties": {
+                            "ids": {
+                                "bsonType": "array",
+                                "items": {
+                                    "bsonType": "string"
+                                }
+                            },
+                            "name": {
+                                "bsonType": "string"
+                            },
+                            "owner": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "workspace": {
+                                        "bsonType": "object",
+                                        "properties": {
+                                            "ids": {
+                                                "bsonType": "array",
+                                                "items": {
+                                                    "bsonType": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "places": {
+                                "bsonType": "array",
+                                "items": {
+                                    "bsonType": "object",
+                                    "properties": {
+                                        "ids": {
+                                            "bsonType": "array",
+                                            "items": {
+                                                "bsonType": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "orders": {
+                    "bsonType": "array",
+                    "items": {
+                        "bsonType": "object",
+                        "properties": {
+                            "broker": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "workspace": {
+                                        "bsonType": "object",
+                                        "properties": {
+                                            "ids": {
+                                                "bsonType": "array",
+                                                "items": {
+                                                    "bsonType": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "buyer": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "customer": {
+                                        "bsonType": "object",
+                                        "properties": {
+                                            "ids": {
+                                                "bsonType": "array",
+                                                "items": {
+                                                    "bsonType": "string"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "workspace": {
+                                        "bsonType": "object",
+                                        "properties": {
+                                            "ids": {
+                                                "bsonType": "array",
+                                                "items": {
+                                                    "bsonType": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "channel": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "ids": {
+                                        "bsonType": "array",
+                                        "items": {
+                                            "bsonType": "string"
+                                        }
+                                    },
+                                    "name": {
+                                        "bsonType": "string"
+                                    }
+                                }
+                            },
+                            "createdAt": {
+                                "bsonType": "string"
+                            },
+                            "ids": {
+                                "bsonType": "array",
+                                "items": {
+                                    "bsonType": "string"
+                                }
+                            },
+                            "lines": {
+                                "bsonType": "array",
+                                "items": {
+                                    "bsonType": "object",
+                                    "properties": {
+                                        "item": {
+                                            "bsonType": "object",
+                                            "properties": {
+                                                "ids": {
+                                                    "bsonType": "array",
+                                                    "items": {
+                                                        "bsonType": "string"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "name": {
+                                            "bsonType": "string"
+                                        },
+                                        "product": {
+                                            "bsonType": "object",
+                                            "properties": {
+                                                "ids": {
+                                                    "bsonType": "array",
+                                                    "items": {
+                                                        "bsonType": "string"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "quantity": {
+                                            "bsonType": "object",
+                                            "properties": {
+                                                "value": {
+                                                    "bsonType": "decimal"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "link": {
+                                "bsonType": "string"
+                            },
+                            "number": {
+                                "bsonType": "string"
+                            },
+                            "paymentStatus": {
+                                "bsonType": "string"
+                            },
+                            "seller": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "supplier": {
+                                        "bsonType": "object",
+                                        "properties": {
+                                            "ids": {
+                                                "bsonType": "array",
+                                                "items": {
+                                                    "bsonType": "string"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "workspace": {
+                                        "bsonType": "object",
+                                        "properties": {
+                                            "ids": {
+                                                "bsonType": "array",
+                                                "items": {
+                                                    "bsonType": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "shipmentStatus": {
+                                "bsonType": "string"
+                            },
+                            "shippingAddress": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "place": {
+                                        "bsonType": "object",
+                                        "properties": {
+                                            "ids": {
+                                                "bsonType": "array",
+                                                "items": {
+                                                    "bsonType": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "shippingMethod": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "ids": {
+                                        "bsonType": "array",
+                                        "items": {
+                                            "bsonType": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "status": {
+                                "bsonType": "string"
+                            }
+                        }
+                    }
+                },
+                "places": {
+                    "bsonType": "array",
+                    "items": {
+                        "bsonType": "object",
+                        "properties": {
+                            "address": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "country": {
+                                        "bsonType": "object",
+                                        "properties": {
+                                            "ids": {
+                                                "bsonType": "array",
+                                                "items": {
+                                                    "bsonType": "string"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "locality": {
+                                        "bsonType": "string"
+                                    },
+                                    "postalCode": {
+                                        "bsonType": "string"
+                                    },
+                                    "street": {
+                                        "bsonType": "string"
+                                    }
+                                }
+                            },
+                            "ids": {
+                                "bsonType": "array",
+                                "items": {
+                                    "bsonType": "string"
+                                }
+                            },
+                            "private": {
+                                "bsonType": "bool"
+                            },
+                            "services": {
+                                "bsonType": "array",
+                                "items": {
+                                    "bsonType": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "productCategories": {
+                    "bsonType": "array",
+                    "items": {
+                        "bsonType": "object",
+                        "properties": {
+                            "classification": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "ids": {
+                                        "bsonType": "array",
+                                        "items": {
+                                            "bsonType": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "ids": {
+                                "bsonType": "array",
+                                "items": {
+                                    "bsonType": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "productClassifications": {
+                    "bsonType": "array",
+                    "items": {
+                        "bsonType": "object",
+                        "properties": {
+                            "ids": {
+                                "bsonType": "array",
+                                "items": {
+                                    "bsonType": "string"
+                                }
+                            },
+                            "owner": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "workspace": {
+                                        "bsonType": "object",
+                                        "properties": {
+                                            "ids": {
+                                                "bsonType": "array",
+                                                "items": {
+                                                    "bsonType": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "productGroups": {
+                    "bsonType": "array",
+                    "items": {
+                        "bsonType": "object",
+                        "properties": {
+                            "ids": {
+                                "bsonType": "array",
+                                "items": {
+                                    "bsonType": "string"
+                                }
+                            },
+                            "name": {
+                                "bsonType": "string"
+                            },
+                            "producer": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "workspace": {
+                                        "bsonType": "object",
+                                        "properties": {
+                                            "ids": {
+                                                "bsonType": "array",
+                                                "items": {
+                                                    "bsonType": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "products": {
+                    "bsonType": "array",
+                    "items": {
+                        "bsonType": "object",
+                        "properties": {
+                            "categories": {
+                                "bsonType": "array",
+                                "items": {
+                                    "bsonType": "object",
+                                    "properties": {
+                                        "ids": {
+                                            "bsonType": "array",
+                                            "items": {
+                                                "bsonType": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "group": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "ids": {
+                                        "bsonType": "array",
+                                        "items": {
+                                            "bsonType": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "ids": {
+                                "bsonType": "array",
+                                "items": {
+                                    "bsonType": "string"
+                                }
+                            },
+                            "name": {
+                                "bsonType": "string"
+                            },
+                            "producer": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "workspace": {
+                                        "bsonType": "object",
+                                        "properties": {
+                                            "ids": {
+                                                "bsonType": "array",
+                                                "items": {
+                                                    "bsonType": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "shippingMethods": {
+                    "bsonType": "array",
+                    "items": {
+                        "bsonType": "object",
+                        "properties": {
+                            "ids": {
+                                "bsonType": "array",
+                                "items": {
+                                    "bsonType": "string"
+                                }
+                            },
+                            "name": {
+                                "bsonType": "string"
+                            },
+                            "owner": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "workspace": {
+                                        "bsonType": "object",
+                                        "properties": {
+                                            "ids": {
+                                                "bsonType": "array",
+                                                "items": {
+                                                    "bsonType": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "suppliers": {
+                    "bsonType": "array",
+                    "items": {
+                        "bsonType": "object",
+                        "properties": {
+                            "ids": {
+                                "bsonType": "array",
+                                "items": {
+                                    "bsonType": "string"
+                                }
+                            },
+                            "name": {
+                                "bsonType": "string"
+                            },
+                            "owner": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "workspace": {
+                                        "bsonType": "object",
+                                        "properties": {
+                                            "ids": {
+                                                "bsonType": "array",
+                                                "items": {
+                                                    "bsonType": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "workspaces": {
+                    "bsonType": "array",
+                    "items": {
+                        "bsonType": "object",
+                        "properties": {
+                            "ids": {
+                                "bsonType": "array",
+                                "items": {
+                                    "bsonType": "string"
+                                }
+                            },
+                            "name": {
+                                "bsonType": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "strategy": {
+            "bsonType": "objectId"
+        }
+    },
+    "title": "consolidationContext"
+}

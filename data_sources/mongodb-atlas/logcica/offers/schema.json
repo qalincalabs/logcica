@@ -3,6 +3,23 @@
         "_id": {
             "bsonType": "objectId"
         },
+        "createdAt": {
+            "bsonType": "date"
+        },
+        "ids": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "string"
+            }
+        },
+        "owner": {
+            "bsonType": "object",
+            "properties": {
+                "workspace": {
+                    "bsonType": "objectId"
+                }
+            }
+        },
         "price": {
             "bsonType": "object",
             "properties": {
@@ -18,6 +35,31 @@
                     "bsonType": "double"
                 }
             }
+        },
+        "product": {
+            "bsonType": "objectId"
+        },
+        "quantity": {
+            "bsonType": "object",
+            "properties": {
+                "unit": {
+                    "bsonType": "object",
+                    "properties": {
+                        "code": {
+                            "bsonType": "string"
+                        },
+                        "symbol": {
+                            "bsonType": "string"
+                        }
+                    }
+                },
+                "value": {
+                    "bsonType": "decimal"
+                }
+            }
+        },
+        "updatedAt": {
+            "bsonType": "date"
         }
     },
     "title": "offer"

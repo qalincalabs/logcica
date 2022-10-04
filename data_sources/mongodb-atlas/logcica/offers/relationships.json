@@ -1,1 +1,14 @@
-{}
+{
+    "owner.workspace": {
+        "ref": "#/relationship/mongodb-atlas/logcica/workspaces",
+        "source_key": "owner.workspace",
+        "foreign_key": "_id",
+        "is_list": false
+    },
+    "product": {
+        "ref": "#/relationship/mongodb-atlas/logcica/products",
+        "source_key": "product",
+        "foreign_key": "_id",
+        "is_list": false
+    }
+}

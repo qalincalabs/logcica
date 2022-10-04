@@ -5,6 +5,12 @@
         "foreign_key": "_id",
         "is_list": false
     },
+    "buyer.customer": {
+        "ref": "#/relationship/mongodb-atlas/logcica/customers",
+        "source_key": "buyer.customer",
+        "foreign_key": "_id",
+        "is_list": false
+    },
     "lines.[].product._id": {
         "ref": "#/relationship/mongodb-atlas/logcica/products",
         "source_key": "lines.[].product._id",
@@ -14,6 +20,18 @@
     "lines.[].product1": {
         "ref": "#/relationship/mongodb-atlas/logcica/products",
         "source_key": "lines.[].product1",
+        "foreign_key": "_id",
+        "is_list": false
+    },
+    "salesSession": {
+        "ref": "#/relationship/mongodb-atlas/logcica/salesSessions",
+        "source_key": "salesSession",
+        "foreign_key": "_id",
+        "is_list": false
+    },
+    "seller.supplier": {
+        "ref": "#/relationship/mongodb-atlas/logcica/suppliers",
+        "source_key": "seller.supplier",
         "foreign_key": "_id",
         "is_list": false
     },

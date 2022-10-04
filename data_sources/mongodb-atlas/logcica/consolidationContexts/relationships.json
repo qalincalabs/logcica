@@ -1,0 +1,8 @@
+{
+    "strategy": {
+        "ref": "#/relationship/mongodb-atlas/logcica/consolidationStrategies",
+        "source_key": "strategy",
+        "foreign_key": "_id",
+        "is_list": false
+    }
+}

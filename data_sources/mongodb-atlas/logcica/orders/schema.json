@@ -20,6 +20,9 @@
         "buyer": {
             "bsonType": "object",
             "properties": {
+                "customer": {
+                    "bsonType": "objectId"
+                },
                 "email": {
                     "bsonType": "string"
                 },
@@ -31,11 +34,17 @@
                 },
                 "phone": {
                     "bsonType": "string"
+                },
+                "workspace": {
+                    "bsonType": "objectId"
                 }
             }
         },
         "confirmed": {
             "bsonType": "bool"
+        },
+        "createdAt": {
+            "bsonType": "date"
         },
         "date": {
             "bsonType": "date"
@@ -110,7 +119,7 @@
                                 }
                             },
                             "value": {
-                                "bsonType": "int"
+                                "bsonType": "decimal"
                             }
                         }
                     },
@@ -123,11 +132,17 @@
         "number": {
             "bsonType": "string"
         },
+        "salesSession": {
+            "bsonType": "objectId"
+        },
         "seller": {
             "bsonType": "object",
             "properties": {
                 "name": {
                     "bsonType": "string"
+                },
+                "supplier": {
+                    "bsonType": "objectId"
                 },
                 "workspace": {
                     "bsonType": "objectId"
@@ -184,6 +199,9 @@
         },
         "shippingMethod": {
             "bsonType": "objectId"
+        },
+        "updatedAt": {
+            "bsonType": "date"
         },
         "url": {
             "bsonType": "string"

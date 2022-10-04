@@ -1,0 +1,8 @@
+{
+    "places": {
+        "ref": "#/relationship/mongodb-atlas/logcica/places",
+        "source_key": "places",
+        "foreign_key": "_id",
+        "is_list": true
+    }
+}

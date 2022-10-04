@@ -1,0 +1,31 @@
+{
+    "properties": {
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "createdAt": {
+            "bsonType": "date"
+        },
+        "ids": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "string"
+            }
+        },
+        "name": {
+            "bsonType": "string"
+        },
+        "owner": {
+            "bsonType": "object",
+            "properties": {
+                "workspace": {
+                    "bsonType": "objectId"
+                }
+            }
+        },
+        "updatedAt": {
+            "bsonType": "date"
+        }
+    },
+    "title": "supplier"
+}
