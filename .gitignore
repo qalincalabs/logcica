@@ -140,3 +140,4 @@ dist
 
 ### Remix+Netlify ###
 /.netlify
+/site/.netlify
