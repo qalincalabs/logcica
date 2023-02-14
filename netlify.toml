@@ -10,6 +10,11 @@
   status = 200
 
 [[redirects]]
+  from = "/coconut/*"
+  to = "/.netlify/functions/coconut/:splat"
+  status = 200
+
+[[redirects]]
   from = "/graphql"
   to = "https://realm.mongodb.com/api/client/v2.0/app/logcica-pfufx/graphql"
   status = 200
