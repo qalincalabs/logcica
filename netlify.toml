@@ -8,3 +8,8 @@
   from = "/ping/*"
   to = "/.netlify/functions/ping/:splat"
   status = 200
+
+[[redirects]]
+  from = "/graphql"
+  to = "https://realm.mongodb.com/api/client/v2.0/app/logcica-pfufx/graphql"
+  status = 200
