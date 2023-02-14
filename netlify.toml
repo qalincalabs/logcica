@@ -1,0 +1,10 @@
+[build]
+  base = "site/"
+
+[functions]
+  directory = "services/"
+
+[[redirects]]
+  from = "/ping/*"
+  to = "/.netlify/functions/ping/:splat"
+  status = 200

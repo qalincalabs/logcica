@@ -1,0 +1,27 @@
+{
+  "name": "logcica",
+  "version": "1.0.0",
+  "description": "Headless local food system logistic platform",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qalincalabs/logcica.git"
+  },
+  "keywords": [
+    "logistics",
+    "headless",
+    "local-food-system"
+  ],
+  "author": "olivier5741 (Qalinca Labs, ULB)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qalincalabs/logcica/issues"
+  },
+  "homepage": "https://github.com/qalincalabs/logcica#readme"
+}
