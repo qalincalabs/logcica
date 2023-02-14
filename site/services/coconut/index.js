@@ -4,7 +4,7 @@ const {
     parseRequestBody,
     generateReceiverEvent,
     isUrlVerificationRequest
-} = require("../utils");
+} = require("./utils");
 
 dotenv.config();
 
