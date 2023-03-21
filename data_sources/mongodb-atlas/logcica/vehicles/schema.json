@@ -20,15 +20,20 @@
                         "unit": {
                             "bsonType": "object",
                             "properties": {
+                                "code": {
+                                    "bsonType": "string"
+                                },
                                 "symbol": {
                                     "bsonType": "string"
                                 }
-                            }
+                            },
+                            "title": "UnitRef"
                         },
                         "value": {
                             "bsonType": "double"
                         }
-                    }
+                    },
+                    "title": "Quantity"
                 },
                 "weight": {
                     "bsonType": "object",
@@ -36,17 +41,23 @@
                         "unit": {
                             "bsonType": "object",
                             "properties": {
+                                "code": {
+                                    "bsonType": "string"
+                                },
                                 "symbol": {
                                     "bsonType": "string"
                                 }
-                            }
+                            },
+                            "title": "UnitRef"
                         },
                         "value": {
                             "bsonType": "double"
                         }
-                    }
+                    },
+                    "title": "Quantity"
                 }
-            }
+            },
+            "title": "StorageCapacity"
         },
         "compartments": {
             "bsonType": "array",
@@ -62,15 +73,20 @@
                                     "unit": {
                                         "bsonType": "object",
                                         "properties": {
+                                            "code": {
+                                                "bsonType": "string"
+                                            },
                                             "symbol": {
                                                 "bsonType": "string"
                                             }
-                                        }
+                                        },
+                                        "title": "UnitRef"
                                     },
                                     "value": {
                                         "bsonType": "double"
                                     }
-                                }
+                                },
+                                "title": "Quantity"
                             },
                             "weight": {
                                 "bsonType": "object",
@@ -78,17 +94,23 @@
                                     "unit": {
                                         "bsonType": "object",
                                         "properties": {
+                                            "code": {
+                                                "bsonType": "string"
+                                            },
                                             "symbol": {
                                                 "bsonType": "string"
                                             }
-                                        }
+                                        },
+                                        "title": "UnitRef"
                                     },
                                     "value": {
                                         "bsonType": "double"
                                     }
-                                }
+                                },
+                                "title": "Quantity"
                             }
-                        }
+                        },
+                        "title": "StorageCapacity"
                     },
                     "features": {
                         "bsonType": "array",
@@ -127,10 +149,14 @@
                             "unit": {
                                 "bsonType": "object",
                                 "properties": {
+                                    "code": {
+                                        "bsonType": "string"
+                                    },
                                     "symbol": {
                                         "bsonType": "string"
                                     }
-                                }
+                                },
+                                "title": "UnitRef"
                             }
                         }
                     },
@@ -154,20 +180,28 @@
                             "unit": {
                                 "bsonType": "object",
                                 "properties": {
+                                    "code": {
+                                        "bsonType": "string"
+                                    },
                                     "symbol": {
                                         "bsonType": "string"
                                     }
-                                }
+                                },
+                                "title": "UnitRef"
                             }
                         }
                     },
                     "unit": {
                         "bsonType": "object",
                         "properties": {
+                            "code": {
+                                "bsonType": "string"
+                            },
                             "symbol": {
                                 "bsonType": "string"
                             }
-                        }
+                        },
+                        "title": "UnitRef"
                     },
                     "value": {
                         "bsonType": "double"
@@ -209,7 +243,8 @@
                 "workspace": {
                     "bsonType": "objectId"
                 }
-            }
+            },
+            "title": "ActorRef"
         },
         "type": {
             "bsonType": "string"
@@ -220,15 +255,20 @@
                 "unit": {
                     "bsonType": "object",
                     "properties": {
+                        "code": {
+                            "bsonType": "string"
+                        },
                         "symbol": {
                             "bsonType": "string"
                         }
-                    }
+                    },
+                    "title": "UnitRef"
                 },
                 "value": {
                     "bsonType": "double"
                 }
-            }
+            },
+            "title": "Quantity"
         }
     },
     "title": "vehicle"

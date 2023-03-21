@@ -7,21 +7,54 @@
             "bsonType": "object",
             "properties": {
                 "country": {
+                    "bsonType": "string"
+                },
+                "geo": {
                     "bsonType": "object",
                     "properties": {
-                        "name": {
+                        "coordinates": {
+                            "bsonType": "array",
+                            "items": {
+                                "bsonType": "double"
+                            }
+                        },
+                        "type": {
                             "bsonType": "string"
                         }
-                    }
+                    },
+                    "title": "Geometry"
                 },
                 "locality": {
                     "bsonType": "string"
+                },
+                "name": {
+                    "bsonType": "string"
+                },
+                "phone": {
+                    "bsonType": "string"
+                },
+                "place": {
+                    "bsonType": "objectId"
                 },
                 "postalCode": {
                     "bsonType": "string"
                 },
                 "street": {
                     "bsonType": "string"
+                }
+            },
+            "title": "Address"
+        },
+        "coconut": {
+            "bsonType": "object",
+            "properties": {
+                "slackChannel": {
+                    "bsonType": "object",
+                    "properties": {
+                        "id": {
+                            "bsonType": "string"
+                        }
+                    }
                 }
             }
         },
@@ -54,7 +87,8 @@
                 "type": {
                     "bsonType": "string"
                 }
-            }
+            },
+            "title": "Geometry"
         },
         "ids": {
             "bsonType": "array",
@@ -82,7 +116,13 @@
         "place": {
             "bsonType": "objectId"
         },
+        "taxId": {
+            "bsonType": "string"
+        },
         "type": {
+            "bsonType": "string"
+        },
+        "vatId": {
             "bsonType": "string"
         }
     },

@@ -12,6 +12,9 @@
         "classification": {
             "bsonType": "objectId"
         },
+        "code": {
+            "bsonType": "string"
+        },
         "hierarchyLevel": {
             "bsonType": "int"
         },

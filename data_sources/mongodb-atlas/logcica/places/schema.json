@@ -7,24 +7,34 @@
             "bsonType": "object",
             "properties": {
                 "country": {
+                    "bsonType": "string"
+                },
+                "geo": {
                     "bsonType": "object",
                     "properties": {
-                        "code": {
-                            "bsonType": "string"
-                        },
-                        "ids": {
+                        "coordinates": {
                             "bsonType": "array",
                             "items": {
-                                "bsonType": "string"
+                                "bsonType": "double"
                             }
                         },
-                        "name": {
+                        "type": {
                             "bsonType": "string"
                         }
-                    }
+                    },
+                    "title": "Geometry"
                 },
                 "locality": {
                     "bsonType": "string"
+                },
+                "name": {
+                    "bsonType": "string"
+                },
+                "phone": {
+                    "bsonType": "string"
+                },
+                "place": {
+                    "bsonType": "objectId"
                 },
                 "postalCode": {
                     "bsonType": "string"
@@ -32,12 +42,10 @@
                 "street": {
                     "bsonType": "string"
                 }
-            }
+            },
+            "title": "Address"
         },
-        "code": {
-            "bsonType": "string"
-        },
-        "geo": {
+        "center": {
             "bsonType": "object",
             "properties": {
                 "coordinates": {
@@ -49,7 +57,27 @@
                 "type": {
                     "bsonType": "string"
                 }
-            }
+            },
+            "title": "Geometry"
+        },
+        "code": {
+            "bsonType": "string"
+        },
+        "geo": {
+            "bsonType": "object",
+            "isDeprecated": true,
+            "properties": {
+                "coordinates": {
+                    "bsonType": "array",
+                    "items": {
+                        "bsonType": "double"
+                    }
+                },
+                "type": {
+                    "bsonType": "string"
+                }
+            },
+            "title": "Geometry"
         },
         "gln": {
             "bsonType": "string"
@@ -69,7 +97,8 @@
                 "workspace": {
                     "bsonType": "objectId"
                 }
-            }
+            },
+            "title": "ActorRef"
         },
         "types": {
             "bsonType": "array",

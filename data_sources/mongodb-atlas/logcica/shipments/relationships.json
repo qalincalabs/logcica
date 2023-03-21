@@ -1,4 +1,10 @@
 {
+    "carrier.workspace": {
+        "ref": "#/relationship/mongodb-atlas/logcica/workspaces",
+        "source_key": "carrier.workspace",
+        "foreign_key": "_id",
+        "is_list": false
+    },
     "delivery.place": {
         "ref": "#/relationship/mongodb-atlas/logcica/places",
         "source_key": "delivery.place",

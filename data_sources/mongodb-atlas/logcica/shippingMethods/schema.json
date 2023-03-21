@@ -21,7 +21,8 @@
                 "workspace": {
                     "bsonType": "objectId"
                 }
-            }
+            },
+            "title": "ActorRef"
         },
         "pickup": {
             "bsonType": "object",

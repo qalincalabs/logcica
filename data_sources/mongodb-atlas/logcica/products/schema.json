@@ -9,15 +9,28 @@
                 "bsonType": "object",
                 "properties": {
                     "allergen": {
-                        "bsonType": "objectId"
-                    },
-                    "quantity": {
                         "bsonType": "object",
                         "properties": {
-                            "level": {
-                                "bsonType": "objectId"
+                            "code": {
+                                "bsonType": "string"
+                            },
+                            "key": {
+                                "bsonType": "string"
                             }
-                        }
+                        },
+                        "title": "CodeRef"
+                    },
+                    "levelOfContainment": {
+                        "bsonType": "object",
+                        "properties": {
+                            "code": {
+                                "bsonType": "string"
+                            },
+                            "key": {
+                                "bsonType": "string"
+                            }
+                        },
+                        "title": "CodeRef"
                     }
                 }
             }
@@ -36,11 +49,47 @@
                 "bsonType": "objectId"
             }
         },
+        "consumerSafetyInformation": {
+            "bsonType": "string"
+        },
+        "consumerStorageInstructions": {
+            "bsonType": "string"
+        },
+        "consumerUsageInstructions": {
+            "bsonType": "string"
+        },
         "countryOfOrigin": {
             "bsonType": "objectId"
         },
         "createdAt": {
             "bsonType": "date"
+        },
+        "description": {
+            "bsonType": "string"
+        },
+        "functionalName": {
+            "bsonType": "string"
+        },
+        "grossWeight": {
+            "bsonType": "object",
+            "properties": {
+                "unit": {
+                    "bsonType": "object",
+                    "properties": {
+                        "code": {
+                            "bsonType": "string"
+                        },
+                        "symbol": {
+                            "bsonType": "string"
+                        }
+                    },
+                    "title": "UnitRef"
+                },
+                "value": {
+                    "bsonType": "double"
+                }
+            },
+            "title": "Quantity"
         },
         "group": {
             "bsonType": "objectId"
@@ -52,6 +101,14 @@
             "bsonType": "array",
             "items": {
                 "bsonType": "string"
+            }
+        },
+        "image": {
+            "bsonType": "object",
+            "properties": {
+                "url": {
+                    "bsonType": "string"
+                }
             }
         },
         "images": {
@@ -82,7 +139,7 @@
                         "bsonType": "object",
                         "properties": {
                             "percentage": {
-                                "bsonType": "int"
+                                "bsonType": "double"
                             }
                         }
                     },
@@ -92,38 +149,97 @@
                 }
             }
         },
+        "ingredientStatement": {
+            "bsonType": "string"
+        },
+        "marketingMessage": {
+            "bsonType": "string"
+        },
         "name": {
             "bsonType": "string"
+        },
+        "netVolume": {
+            "bsonType": "object",
+            "properties": {
+                "unit": {
+                    "bsonType": "object",
+                    "properties": {
+                        "code": {
+                            "bsonType": "string"
+                        },
+                        "symbol": {
+                            "bsonType": "string"
+                        }
+                    },
+                    "title": "UnitRef"
+                },
+                "value": {
+                    "bsonType": "double"
+                }
+            },
+            "title": "Quantity"
         },
         "netWeight": {
             "bsonType": "object",
             "properties": {
                 "unit": {
-                    "bsonType": "objectId"
+                    "bsonType": "object",
+                    "properties": {
+                        "code": {
+                            "bsonType": "string"
+                        },
+                        "symbol": {
+                            "bsonType": "string"
+                        }
+                    },
+                    "title": "UnitRef"
                 },
                 "value": {
-                    "bsonType": "decimal"
+                    "bsonType": "double"
                 }
-            }
+            },
+            "title": "Quantity"
         },
         "nutrientList": {
             "bsonType": "array",
             "items": {
                 "bsonType": "object",
                 "properties": {
+                    "dailyValueIntakePercent": {
+                        "bsonType": "double"
+                    },
                     "nutrient": {
-                        "bsonType": "objectId"
+                        "bsonType": "object",
+                        "properties": {
+                            "code": {
+                                "bsonType": "string"
+                            },
+                            "key": {
+                                "bsonType": "string"
+                            }
+                        },
+                        "title": "CodeRef"
                     },
                     "quantity": {
                         "bsonType": "object",
                         "properties": {
                             "unit": {
-                                "bsonType": "objectId"
+                                "bsonType": "object",
+                                "properties": {
+                                    "code": {
+                                        "bsonType": "string"
+                                    },
+                                    "symbol": {
+                                        "bsonType": "string"
+                                    }
+                                },
+                                "title": "UnitRef"
                             },
                             "value": {
-                                "bsonType": "int"
+                                "bsonType": "double"
                             }
-                        }
+                        },
+                        "title": "Quantity"
                     }
                 }
             }
@@ -131,13 +247,11 @@
         "owner": {
             "bsonType": "object",
             "properties": {
-                "place": {
-                    "bsonType": "objectId"
-                },
                 "workspace": {
                     "bsonType": "objectId"
                 }
-            }
+            },
+            "title": "ActorRef"
         },
         "producer": {
             "bsonType": "object",
@@ -145,12 +259,38 @@
                 "workspace": {
                     "bsonType": "objectId"
                 }
-            }
+            },
+            "title": "ActorRef"
         },
         "publishedAt": {
             "bsonType": "date"
         },
+        "quantity": {
+            "bsonType": "object",
+            "properties": {
+                "unit": {
+                    "bsonType": "object",
+                    "properties": {
+                        "text": {
+                            "bsonType": "string"
+                        }
+                    }
+                },
+                "value": {
+                    "bsonType": "double"
+                }
+            }
+        },
+        "regulatedName": {
+            "bsonType": "string"
+        },
         "sku": {
+            "bsonType": "string"
+        },
+        "supplierSpecifiedMinimumConsumerStorageDays": {
+            "bsonType": "int"
+        },
+        "test": {
             "bsonType": "string"
         },
         "weight": {
@@ -161,13 +301,18 @@
                     "properties": {
                         "code": {
                             "bsonType": "string"
+                        },
+                        "symbol": {
+                            "bsonType": "string"
                         }
-                    }
+                    },
+                    "title": "UnitRef"
                 },
                 "value": {
-                    "bsonType": "decimal"
+                    "bsonType": "double"
                 }
-            }
+            },
+            "title": "Quantity"
         }
     },
     "title": "product"

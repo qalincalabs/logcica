@@ -18,7 +18,8 @@
                 "workspace": {
                     "bsonType": "objectId"
                 }
-            }
+            },
+            "title": "ActorRef"
         },
         "price": {
             "bsonType": "object",
@@ -28,13 +29,18 @@
                     "properties": {
                         "code": {
                             "bsonType": "string"
+                        },
+                        "symbol": {
+                            "bsonType": "string"
                         }
-                    }
+                    },
+                    "title": "CurrencyRef"
                 },
                 "value": {
                     "bsonType": "double"
                 }
-            }
+            },
+            "title": "Price"
         },
         "product": {
             "bsonType": "objectId"
@@ -51,12 +57,14 @@
                         "symbol": {
                             "bsonType": "string"
                         }
-                    }
+                    },
+                    "title": "UnitRef"
                 },
                 "value": {
-                    "bsonType": "decimal"
+                    "bsonType": "double"
                 }
-            }
+            },
+            "title": "Quantity"
         },
         "updatedAt": {
             "bsonType": "date"

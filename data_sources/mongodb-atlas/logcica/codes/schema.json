@@ -3,11 +3,20 @@
         "_id": {
             "bsonType": "objectId"
         },
+        "ids": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "string"
+            }
+        },
         "key": {
             "bsonType": "string"
         },
         "list": {
             "bsonType": "objectId"
+        },
+        "listKey": {
+            "bsonType": "string"
         },
         "name": {
             "bsonType": "string"
@@ -17,6 +26,43 @@
         },
         "symbol": {
             "bsonType": "string"
+        },
+        "translations": {
+            "bsonType": "object",
+            "properties": {
+                "de": {
+                    "bsonType": "object",
+                    "properties": {
+                        "name": {
+                            "bsonType": "string"
+                        }
+                    }
+                },
+                "en": {
+                    "bsonType": "object",
+                    "properties": {
+                        "name": {
+                            "bsonType": "string"
+                        }
+                    }
+                },
+                "fr": {
+                    "bsonType": "object",
+                    "properties": {
+                        "name": {
+                            "bsonType": "string"
+                        }
+                    }
+                },
+                "nl": {
+                    "bsonType": "object",
+                    "properties": {
+                        "name": {
+                            "bsonType": "string"
+                        }
+                    }
+                }
+            }
         }
     },
     "title": "code"

@@ -68,6 +68,14 @@
                     "name": {
                         "bsonType": "string"
                     },
+                    "offer": {
+                        "bsonType": "object",
+                        "properties": {
+                            "_id": {
+                                "bsonType": "objectId"
+                            }
+                        }
+                    },
                     "price": {
                         "bsonType": "object",
                         "properties": {
@@ -79,16 +87,15 @@
                                     },
                                     "symbol": {
                                         "bsonType": "string"
-                                    },
-                                    "text": {
-                                        "bsonType": "string"
                                     }
-                                }
+                                },
+                                "title": "CurrencyRef"
                             },
                             "value": {
                                 "bsonType": "double"
                             }
-                        }
+                        },
+                        "title": "Price"
                     },
                     "product": {
                         "bsonType": "object",
@@ -112,16 +119,15 @@
                                     },
                                     "symbol": {
                                         "bsonType": "string"
-                                    },
-                                    "text": {
-                                        "bsonType": "string"
                                     }
-                                }
+                                },
+                                "title": "UnitRef"
                             },
                             "value": {
-                                "bsonType": "decimal"
+                                "bsonType": "double"
                             }
-                        }
+                        },
+                        "title": "Quantity"
                     },
                     "sku": {
                         "bsonType": "string"
@@ -153,15 +159,7 @@
             "bsonType": "object",
             "properties": {
                 "country": {
-                    "bsonType": "object",
-                    "properties": {
-                        "code": {
-                            "bsonType": "string"
-                        },
-                        "name": {
-                            "bsonType": "string"
-                        }
-                    }
+                    "bsonType": "string"
                 },
                 "geo": {
                     "bsonType": "object",
@@ -175,7 +173,8 @@
                         "type": {
                             "bsonType": "string"
                         }
-                    }
+                    },
+                    "title": "Geometry"
                 },
                 "locality": {
                     "bsonType": "string"
@@ -195,10 +194,32 @@
                 "street": {
                     "bsonType": "string"
                 }
-            }
+            },
+            "title": "Address"
         },
         "shippingMethod": {
             "bsonType": "objectId"
+        },
+        "totalPrice": {
+            "bsonType": "object",
+            "properties": {
+                "currency": {
+                    "bsonType": "object",
+                    "properties": {
+                        "code": {
+                            "bsonType": "string"
+                        },
+                        "symbol": {
+                            "bsonType": "string"
+                        }
+                    },
+                    "title": "CurrencyRef"
+                },
+                "value": {
+                    "bsonType": "double"
+                }
+            },
+            "title": "Price"
         },
         "updatedAt": {
             "bsonType": "date"

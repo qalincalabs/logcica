@@ -14,13 +14,18 @@
                     "properties": {
                         "code": {
                             "bsonType": "string"
+                        },
+                        "symbol": {
+                            "bsonType": "string"
                         }
-                    }
+                    },
+                    "title": "UnitRef"
                 },
                 "value": {
                     "bsonType": "double"
                 }
-            }
+            },
+            "title": "Quantity"
         }
     },
     "title": "inventoryItem"

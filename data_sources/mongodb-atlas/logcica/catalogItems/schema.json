@@ -42,29 +42,14 @@
                 "workspace": {
                     "bsonType": "objectId"
                 }
-            }
+            },
+            "title": "ActorRef"
         },
         "product": {
             "bsonType": "objectId"
         },
         "sku": {
             "bsonType": "string"
-        },
-        "weight": {
-            "bsonType": "object",
-            "properties": {
-                "unit": {
-                    "bsonType": "object",
-                    "properties": {
-                        "code": {
-                            "bsonType": "string"
-                        }
-                    }
-                },
-                "value": {
-                    "bsonType": "double"
-                }
-            }
         }
     },
     "title": "catalogItem"

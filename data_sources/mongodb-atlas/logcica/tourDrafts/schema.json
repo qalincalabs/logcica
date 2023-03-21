@@ -9,15 +9,20 @@
                 "unit": {
                     "bsonType": "object",
                     "properties": {
+                        "code": {
+                            "bsonType": "string"
+                        },
                         "symbol": {
                             "bsonType": "string"
                         }
-                    }
+                    },
+                    "title": "UnitRef"
                 },
                 "value": {
                     "bsonType": "double"
                 }
-            }
+            },
+            "title": "Quantity"
         },
         "duration": {
             "bsonType": "object",
@@ -25,15 +30,20 @@
                 "unit": {
                     "bsonType": "object",
                     "properties": {
+                        "code": {
+                            "bsonType": "string"
+                        },
                         "symbol": {
                             "bsonType": "string"
                         }
-                    }
+                    },
+                    "title": "UnitRef"
                 },
                 "value": {
                     "bsonType": "double"
                 }
-            }
+            },
+            "title": "Quantity"
         },
         "optimisation": {
             "bsonType": "object",
@@ -49,7 +59,8 @@
                 "workspace": {
                     "bsonType": "objectId"
                 }
-            }
+            },
+            "title": "ActorRef"
         },
         "shipments": {
             "bsonType": "array",
@@ -63,6 +74,12 @@
             "items": {
                 "bsonType": "object",
                 "properties": {
+                    "actualTimeOfArrival": {
+                        "bsonType": "date"
+                    },
+                    "actualTimeOfDeparture": {
+                        "bsonType": "date"
+                    },
                     "delivery": {
                         "bsonType": "object",
                         "properties": {
@@ -80,15 +97,20 @@
                             "unit": {
                                 "bsonType": "object",
                                 "properties": {
+                                    "code": {
+                                        "bsonType": "string"
+                                    },
                                     "symbol": {
                                         "bsonType": "string"
                                     }
-                                }
+                                },
+                                "title": "UnitRef"
                             },
                             "value": {
                                 "bsonType": "double"
                             }
-                        }
+                        },
+                        "title": "Quantity"
                     },
                     "estimatedTimeOfArrival": {
                         "bsonType": "date"
@@ -129,8 +151,42 @@
                     },
                     "place": {
                         "bsonType": "objectId"
+                    },
+                    "tasks": {
+                        "bsonType": "array",
+                        "items": {
+                            "bsonType": "object",
+                            "properties": {
+                                "duration": {
+                                    "bsonType": "object",
+                                    "properties": {
+                                        "unit": {
+                                            "bsonType": "object",
+                                            "properties": {
+                                                "symbol": {
+                                                    "bsonType": "string"
+                                                }
+                                            }
+                                        },
+                                        "value": {
+                                            "bsonType": "double"
+                                        }
+                                    }
+                                },
+                                "name": {
+                                    "bsonType": "string"
+                                },
+                                "shipments": {
+                                    "bsonType": "array",
+                                    "items": {
+                                        "bsonType": "objectId"
+                                    }
+                                }
+                            }
+                        }
                     }
-                }
+                },
+                "title": "TourStop"
             }
         },
         "tour": {

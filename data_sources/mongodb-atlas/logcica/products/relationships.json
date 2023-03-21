@@ -1,16 +1,4 @@
 {
-    "allergenList.[].allergen": {
-        "ref": "#/relationship/mongodb-atlas/logcica/codes",
-        "source_key": "allergenList.[].allergen",
-        "foreign_key": "_id",
-        "is_list": false
-    },
-    "allergenList.[].quantity.level": {
-        "ref": "#/relationship/mongodb-atlas/logcica/codes",
-        "source_key": "allergenList.[].quantity.level",
-        "foreign_key": "_id",
-        "is_list": false
-    },
     "categories": {
         "ref": "#/relationship/mongodb-atlas/logcica/productCategories",
         "source_key": "categories",
@@ -26,30 +14,6 @@
     "group": {
         "ref": "#/relationship/mongodb-atlas/logcica/productGroups",
         "source_key": "group",
-        "foreign_key": "_id",
-        "is_list": false
-    },
-    "netWeight.unit": {
-        "ref": "#/relationship/mongodb-atlas/logcica/codes",
-        "source_key": "netWeight.unit",
-        "foreign_key": "_id",
-        "is_list": false
-    },
-    "nutrientList.[].nutrient": {
-        "ref": "#/relationship/mongodb-atlas/logcica/codes",
-        "source_key": "nutrientList.[].nutrient",
-        "foreign_key": "_id",
-        "is_list": false
-    },
-    "nutrientList.[].quantity.unit": {
-        "ref": "#/relationship/mongodb-atlas/logcica/codes",
-        "source_key": "nutrientList.[].quantity.unit",
-        "foreign_key": "_id",
-        "is_list": false
-    },
-    "owner.place": {
-        "ref": "#/relationship/mongodb-atlas/logcica/places",
-        "source_key": "owner.place",
         "foreign_key": "_id",
         "is_list": false
     },

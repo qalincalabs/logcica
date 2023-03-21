@@ -21,7 +21,8 @@
                 "workspace": {
                     "bsonType": "objectId"
                 }
-            }
+            },
+            "title": "ActorRef"
         },
         "updatedAt": {
             "bsonType": "date"

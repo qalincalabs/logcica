@@ -3,6 +3,18 @@
         "_id": {
             "bsonType": "objectId"
         },
+        "carrier": {
+            "bsonType": "object",
+            "properties": {
+                "workspace": {
+                    "bsonType": "objectId"
+                }
+            },
+            "title": "ActorRef"
+        },
+        "createdAt": {
+            "bsonType": "date"
+        },
         "date": {
             "bsonType": "date"
         },
@@ -10,12 +22,7 @@
             "bsonType": "object",
             "properties": {
                 "country": {
-                    "bsonType": "object",
-                    "properties": {
-                        "name": {
-                            "bsonType": "string"
-                        }
-                    }
+                    "bsonType": "string"
                 },
                 "locality": {
                     "bsonType": "string"
@@ -54,21 +61,44 @@
                     "quantity": {
                         "bsonType": "object",
                         "properties": {
+                            "unit": {
+                                "bsonType": "object",
+                                "properties": {
+                                    "code": {
+                                        "bsonType": "string"
+                                    },
+                                    "symbol": {
+                                        "bsonType": "string"
+                                    }
+                                },
+                                "title": "UnitRef"
+                            },
                             "value": {
-                                "bsonType": "int"
+                                "bsonType": "double"
                             }
-                        }
+                        },
+                        "title": "Quantity"
                     },
                     "weight": {
                         "bsonType": "object",
                         "properties": {
                             "unit": {
-                                "bsonType": "objectId"
+                                "bsonType": "object",
+                                "properties": {
+                                    "code": {
+                                        "bsonType": "string"
+                                    },
+                                    "symbol": {
+                                        "bsonType": "string"
+                                    }
+                                },
+                                "title": "UnitRef"
                             },
                             "value": {
                                 "bsonType": "double"
                             }
-                        }
+                        },
+                        "title": "Quantity"
                     }
                 }
             }
@@ -87,16 +117,26 @@
                 }
             }
         },
-        "status": {
-            "bsonType": "string"
-        },
         "weight": {
             "bsonType": "object",
             "properties": {
+                "unit": {
+                    "bsonType": "object",
+                    "properties": {
+                        "code": {
+                            "bsonType": "string"
+                        },
+                        "symbol": {
+                            "bsonType": "string"
+                        }
+                    },
+                    "title": "UnitRef"
+                },
                 "value": {
                     "bsonType": "double"
                 }
-            }
+            },
+            "title": "Quantity"
         }
     },
     "title": "shipment"

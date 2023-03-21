@@ -12,7 +12,8 @@
                 "workspace": {
                     "bsonType": "objectId"
                 }
-            }
+            },
+            "title": "ActorRef"
         }
     },
     "title": "catalog"
