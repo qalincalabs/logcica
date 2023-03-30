@@ -4,11 +4,5 @@
         "source_key": "owner.workspace",
         "foreign_key": "_id",
         "is_list": false
-    },
-    "withinAreas": {
-        "ref": "#/relationship/mongodb-atlas/logcica/areas",
-        "source_key": "withinAreas",
-        "foreign_key": "_id",
-        "is_list": true
     }
 }

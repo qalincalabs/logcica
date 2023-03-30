@@ -6,6 +6,12 @@
         "enterprise": {
             "bsonType": "objectId"
         },
+        "locations": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "objectId"
+            }
+        },
         "owner": {
             "bsonType": "object",
             "properties": {

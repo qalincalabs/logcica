@@ -1,0 +1,14 @@
+{
+    "properties": {
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "place": {
+            "bsonType": "objectId"
+        },
+        "type": {
+            "bsonType": "string"
+        }
+    },
+    "title": "location"
+}
